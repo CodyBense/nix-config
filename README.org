@@ -1,0 +1,13 @@
+#+title: Readme
+
+* NixOS
+This is my shitty NixOS config. I will be doing at least a whole year on NixOS, started late on 1/15/26. I have used NixOS for short periods of time, 1-3 months in the past.
+
+* Programs
+
+| Window Manager  | Niri           |
+| Top bar         | Noctalia-shell |
+| Text editor     | Doom Emacs     |
+| Terminal        | Kitty          |
+
+* Install
