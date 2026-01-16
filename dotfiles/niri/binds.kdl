@@ -1,0 +1,189 @@
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    // Applications
+    Mod+T { spawn "kitty"; }
+    Mod+E { spawn-sh "emacs"; }
+    Mod+SHIFT+E { spawn "~/.config/niri/scripts/launch-file-manager.sh"; }
+    Mod+ALT+E { spawn "dolphin"; }
+    // Mod+Space { spawn-sh "tofi-drun --drun-launch=true"; }
+    // Mod+Space { spawn-sh "rofi -show drun"; }
+    Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+F { spawn "zen"; }
+    // Mod+M { spawn "spotify"; }
+    Mod+M { spawn-sh "spotify-player.sh"; }
+    Mod+O { spawn-sh "obsidian"; }
+
+    // Utilities
+    // Mod+Backspace { spawn "wlogout"; }
+    Mod+Backspace { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Period { spawn-sh "rofi -modi emoji -show emoji"; }
+    Mod+Alt+L {spawn "hyprlock"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86MonBrightnessUp { spawn-sh "brightnessctl set +5%"; }
+    XF86MonBrightnessDown { spawn-sh "brightnessctl set 5%-"; }
+    // Mod+Shift+W { spawn "change-wallpaper.sh"; }
+    Mod+Shift+W { spawn-sh "noctalia-shell ipc call wallpaper toggle"; }
+    Mod+Shift+M { spawn "~/.config/niri/scripts/niri-monitor-toggle.sh"; }
+    Mod+Shift+R { spawn "restart-waybar.sh"; }
+    // Mod+N { spawn-sh "swaync-client -t -sw"; }
+    Mod+N { spawn-sh "noctalia-shell ipc call notifications toggleHistory"; }
+    Mod+Alt+N { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Shift+N { spawn "~/.config/niri/scripts/notes-launcher-emacs.sh"; }
+    Mod+Shift+T { spawn-sh "change-theme.sh"; }
+    Mod+B { spawn-sh "~/.config/niri/scripts/bookmarks.sh"; }
+    Mod+Shift+S { spawn-sh "ssh-connections.sh"; }
+    Mod+Q { close-window; }
+    Mod+C { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
+    //Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch-zellij.sh"; }
+    Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch.sh"; }
+    //EMACS
+    //Capture buffer
+    Ctrl+Shift+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (org-capture))'"; }
+    //Calender
+    Mod+Alt+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (calfw-org-open-calendar))'"; }
+    //Bookmarks
+    Mod+Alt+b { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/bookmarks.org\"))'"; }
+    //Todo
+    Mod+Alt+t { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
+
+    // Window management
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Down  { move-window-down; }
+    Mod+Ctrl+Up    { move-window-up; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down; }
+    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    Mod+Shift+Left  { focus-monitor-left; }
+    Mod+Shift+Down  { focus-monitor-down; }
+    Mod+Shift+Up    { focus-monitor-up; }
+    Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+H     { focus-monitor-left; }
+    Mod+Shift+J     { focus-monitor-down; }
+    Mod+Shift+K     { focus-monitor-up; }
+    Mod+Shift+L     { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+U              { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+U         { move-column-to-workspace-down; }
+    Mod+Ctrl+I         { move-column-to-workspace-up; }
+
+    Mod+Shift+Page_Down { move-workspace-down; }
+    Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+U         { move-workspace-down; }
+    Mod+Shift+I         { move-workspace-up; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Alt+1 { move-column-to-workspace focus=false 1; }
+    Mod+Alt+2 { move-column-to-workspace focus=false 2; }
+    Mod+Alt+3 { move-column-to-workspace focus=false 3; }
+    Mod+Alt+4 { move-column-to-workspace focus=false 4; }
+    Mod+Alt+5 { move-column-to-workspace focus=false 5; }
+    Mod+Alt+6 { move-column-to-workspace focus=false 6; }
+    Mod+Alt+7 { move-column-to-workspace focus=false 7; }
+    Mod+Alt+8 { move-column-to-workspace focus=false 8; }
+    Mod+Alt+9 { move-column-to-workspace focus=false 9; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+
+    Mod+Comma  { consume-window-into-column; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+S { spawn-sh "~/.config/niri/scripts/resize-two.sh"; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+Ctrl+F { maximize-column; }
+    Mod+Shift+F { expand-column-to-available-width; }
+    Mod+Alt+F { fullscreen-window; }
+
+    // Mod+C { center-column; }
+
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    Mod+W { toggle-column-tabbed-display; }
+
+    Mod+Ctrl+s { screenshot; }
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+Q { quit; }
+    Ctrl+Alt+Delete { quit; }
+}

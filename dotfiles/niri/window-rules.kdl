@@ -1,0 +1,54 @@
+window-rule {
+    open-maximized true
+}
+
+window-rule {
+    match app-id="com.project.ghostty"
+    match app-id="project"
+    match app-id="Emacs"
+    match app-id="kitty"
+    open-on-workspace "terminal"
+    open-focused true
+    open-maximized true
+}
+
+window-rule {
+    match app-id="zen"
+    open-on-workspace "browser"
+    open-focused true
+}
+
+window-rule {
+    match app-id="com.files.ghostty"
+    match app-id="files"
+    match app-id="dolphin"
+    open-on-workspace "files"
+    open-focused true
+}
+
+window-rule {
+    match app-id="com.notes.ghostty"
+    match app-id="notes"
+    match app-id=r#"obsidian"#
+    open-on-workspace "notes"
+    open-focused true
+}
+
+window-rule {
+    match app-id="com.spotify.ghostty"
+    match app-id="spotify"
+    match app-id=r#"Spotify"#
+    open-on-workspace "music"
+    open-focused true
+}
+
+window-rule {
+    match app-id="viber"
+    open-on-workspace "chat"
+}
+
+window-rule {
+    // geometry-corner-radius 20
+    clip-to-geometry true
+}
+

@@ -1,0 +1,43 @@
+HEADINGS
+# Heading,  num of # dictate level
+
+EMPHASIS
+**text**,   bold
+*text*,     italic
+***text***, bold & italic
+~~text~~,   strikethrough
+>,          blockquote
+>
+>>,         nested blockquote
+
+LISTS
+1.
+    i.
+-
+- []
+
+LINKS
+[text](link),   Link
+[text](link "text"),    link with tite
+<link>, hyperlink
+![](img path), markdown image
+[![](img path "text")](link), markdown clickable image
+
+CODE
+`code`, inline code
+
+```
+//code here, multiline code
+```
+
+`` code ``, escaping backticks for inline code
+
+TABLE
+| ID | Title|, table
+|----|------|
+|    |      |
+
+HORIZONTAL RULES
+---
+___, must have empty line before and after
+***

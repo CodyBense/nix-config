@@ -1,0 +1,23 @@
+{
+  "plugins": {
+    "friendly-snippets": [],
+    "harpoon": {
+      "version": "'harpoon2'"
+    },
+    "mason-lspconfig.nvim": [],
+    "mason.nvim": [],
+    "mini.nvim": [],
+    "nvim": [],
+    "nvim-colorizer.lua": [],
+    "nvim-lspconfig": [],
+    "nvim-treesitter": {
+      "version": "'master'"
+    },
+    "oil.nvim": [],
+    "plenary.nvim": [],
+    "render-markdown.nvim": [],
+    "tree-sitter-markdown": [],
+    "trouble.nvim": [],
+    "undotree": []
+  }
+}

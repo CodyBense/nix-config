@@ -1,0 +1,108 @@
+workspace "terminal"
+workspace "browser"
+workspace "files"
+workspace "notes"
+workspace "music"
+workspace "chat"
+
+include "binds.kdl"
+include "outputs.kdl"
+include "window-rules.kdl"
+
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 250
+        xkb {
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+    }
+
+    mouse {
+
+    }
+
+    trackpoint {
+
+    }
+
+}
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+xwayland-satellite {
+}
+
+layout {
+    gaps 2
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.5
+        proportion 1.0
+    }
+
+   default-column-width {}
+
+    focus-ring {
+        off
+        width 2
+        active-color "#f38ba8"
+        inactive-color "#94e2d5"
+    }
+
+    border {
+        width 2
+        active-color "#f38ba8"
+        inactive-color "#585b70"
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        // on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}
+
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "nm-applet" "--indicator"
+//spawn-at-startup "swaync"
+spawn-at-startup "udiskie"
+spawn-at-startup "sleep" "1"
+spawn-at-startup "emacs"
+spawn-at-startup "sleep" "5"
+spawn-sh-at-startup "~/.config/niri/scripts/niri-monitor-toggle.sh"
+
+prefer-no-csd
+
+switch-events {
+    lid-close { spawn "scripts/niri-lid-shut.sh"; }
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
