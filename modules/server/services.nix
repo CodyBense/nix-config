@@ -2,7 +2,7 @@
 
 {
   # Tailscale
-  services.tailscale.enable = true;
+  config.services.tailscale.enable = true;
 
   config.services.postgress = {
     enable = true;

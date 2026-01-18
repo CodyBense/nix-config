@@ -64,6 +64,7 @@
           specialArgs = {
             inherit system;
             inherit inputs;
+            inherit username;
           };
           modules = [
             ./hosts/pikachu/configuration.nix
@@ -72,11 +73,12 @@
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
+                inherit username;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users."codybense" = ./modules/home-manager;
+              home-manager.users.${username} = ./modules/home-manager;
             }
           ];
         };
