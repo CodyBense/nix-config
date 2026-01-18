@@ -13,5 +13,6 @@ in
       ".bashrc".source = mkOutOfStoreSymlink "${configDir}/bash/.bashrc";
       ".config/starship".source = mkOutOfStoreSymlink "${configDir}/startship.toml";
       ".config/rofi".source = mkOutOfStoreSymlink "${configDir}/rofi";
+      ".config/zellij".source = mkOutOfStoreSymlink "${configDir}/zellij";
     };
   }
