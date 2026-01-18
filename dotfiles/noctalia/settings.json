@@ -439,7 +439,7 @@
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": false
+                "enabled": true
             },
             {
                 "action": "reboot",
