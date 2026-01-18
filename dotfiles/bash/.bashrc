@@ -9,7 +9,7 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 export PATH=$PATH:$HOME/.emacs.d/bin
 export MANPAGER='nvim +Man!'
 export PATH=$PATH:$HOME/.nix-profile/bin
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 # aliases
 alias c="clear"
@@ -32,6 +32,8 @@ alias py="python3"
 alias lg="lazygit"
 alias zj="zellij"
 alias zja="zellij attach"
+alias nrsf="sudo nixos-rebuild switch --flake ."
+alias ssh="kitty +kitten ssh"
 
 # flatpak aliases
 # alias yazi="flatpak run io.github.sxyazi.yazi"
