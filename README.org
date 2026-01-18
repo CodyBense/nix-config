@@ -11,3 +11,10 @@ This is my shitty NixOS config. I will be doing at least a whole year on NixOS, 
 | Terminal        | Kitty          |
 
 * Install
+
+*NOT MEANT TO BE USED BY OTHERS*, so use at your own discretion
+
+To install run the following command in the root dir of the project
+#+begin_src bash
+nix run ./install#
+#+end_src
