@@ -16,7 +16,7 @@ case "${connections}" in
         kitty --title "${connections}" --app-id ssh ssh "${username[2]}"@"${connections}"
         ;;
     *)
-        notify-send "Not a valid ssh connection"
+        noctalia-shell ipc call toast send '{"title": "Not a valid ssh connection"}'
         ;;
 
 esac

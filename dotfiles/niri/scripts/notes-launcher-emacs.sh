@@ -10,7 +10,7 @@ new_notes() {
         emacsclient -n $DIR/daily/$(command date +"%Y-%m-%d").org
         ;;
     *)
-        # notify-send "Figure out how you want to implement new none daily notes"
+        noctalia-shell ipc call toast send '{"title": "Figure out how you wwant to implement new non-daily notes"}'
         ;;
     esac
 }
@@ -22,7 +22,6 @@ case $choice in
     ;;
 "open")
     note_dir=$(printf "$(command ls -t1 $DIR/roam/Notes)" | rofi -dmenu -p "Note dir: ") || exit 0
-    echo $note_dir
     emacsclient -n $DIR/roam/Notes/$note_dir
     ;;
 "new")
