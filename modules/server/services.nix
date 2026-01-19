@@ -2,9 +2,9 @@
 
 {
   # Tailscale
-  config.services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
-  config.services.postgress = {
+  services.postgress = {
     enable = true;
     ensureDatabases = [ "mydatabase" ];
     authentication = pkgs.lib.mkOverride 10 ''
