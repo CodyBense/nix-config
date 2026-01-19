@@ -94,6 +94,7 @@
     jqp
     lazygit
     neovim
+    protonvpn-gui
     rofi
     rsync
     spotify
