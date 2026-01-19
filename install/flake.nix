@@ -43,7 +43,7 @@
         sleep 1
         echo '{{ Color "99" " Rebooting" }}' | ${pkgs.gum}/bin/gum format -t template
         sleep 1
-        reboot
+        # reboot
       '';
   };
 }
