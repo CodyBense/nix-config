@@ -35,7 +35,7 @@ binds {
     Mod+Shift+N { spawn "~/.config/niri/scripts/notes-launcher-emacs.sh"; }
     Mod+Shift+T { spawn-sh "change-theme.sh"; }
     Mod+B { spawn-sh "~/.config/niri/scripts/bookmarks.sh"; }
-    Mod+Shift+S { spawn-sh "~/.config/niri/scrips/ssh-connections.sh"; }
+    Mod+Shift+S { spawn-sh "~/.config/niri/scripts/ssh-connections.sh"; }
     Mod+Q { close-window; }
     Mod+C { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
     //Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch-zellij.sh"; }
