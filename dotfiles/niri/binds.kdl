@@ -49,6 +49,8 @@ binds {
     Mod+Alt+b { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/bookmarks.org\"))'"; }
     //Todo
     Mod+Alt+t { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
+    //Projects
+    Mod+Alt+p { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/projects.org\"))'"; }
 
     // Window management
     Mod+Left  { focus-column-left; }
