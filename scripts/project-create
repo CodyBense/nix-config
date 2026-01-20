@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+projectName=
+parentDir=
+parentDirChoice=
+languageChoice=
+
+mkpdir() {
+    mkdir "$1"/"$2"
+}
+
+createProject() {
+    case $1 in
+    rust)
+        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
+        cd "$parentDir" || exit
+        cargo new "$projectName"
+        ;;
+    go)
+        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
+        mkpdir "$parentDir" "$projectName"
+        cd "$parentDir"/"$projectName" || exit
+        go mod init "$projectName"
+        git init
+        cat ~/nix-config/dotfiles/git/Go.gitignore >"$parentDir"/"$projectName"/.gitignore
+        ;;
+    zig)
+        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        mkpdir "$parentDir" "$projectName"
+        cd "$parentDir"/"$projectName" || exit
+        zig init
+        git init
+        cat ~/nix-config/dotfiles/git/Zig.gitignore >"$parentDir"/"$projectName"/.gitignore
+        ;;
+    python)
+        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
+        cd "$parentDir" || exit
+        uv init "$projectName"
+        ;;
+    *)
+        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        mkpdir "$parentDir" "$projectName"
+        cd "$parentDir"/"$projectName" || exit
+        git init
+        cat ~/nix-config/dotfiles/git/C.gitignore >"$parentDir"/"$projectName"/.gitignore
+        ;;
+    esac
+}
+
+gum style \
+    --foreground 212 --border-foreground 212 --border double \
+    --align center --width 50 --margin "1 2" --padding "2 4" \
+    'Create a new project'
+
+projectName=$(gum input --placeholder "Project Name")
+parentDirChoice=$(gum choose github projects)
+
+case $parentDirChoice in
+github)
+    parentDir=$HOME/workspaces/github/CodyBense
+    ;;
+*)
+    parentDir=$HOME/workspaces/projects
+    ;;
+esac
+
+languageChoice=$(gum choose go rust zig c python)
+
+createProject "$languageChoice"
