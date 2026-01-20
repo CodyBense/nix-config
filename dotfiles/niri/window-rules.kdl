@@ -27,14 +27,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id="com.notes.ghostty"
-    match app-id="notes"
-    match app-id=r#"obsidian"#
-    open-on-workspace "notes"
-    open-focused true
-}
-
-window-rule {
     match app-id="com.spotify.ghostty"
     match app-id="spotify"
     match app-id=r#"Spotify"#
@@ -45,6 +37,11 @@ window-rule {
 window-rule {
     match app-id="viber"
     open-on-workspace "chat"
+}
+
+window-rule {
+    match app-id="protonvpn-app"
+    open-on-workspace "extra"
 }
 
 window-rule {

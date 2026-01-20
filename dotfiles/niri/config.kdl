@@ -1,9 +1,9 @@
 workspace "terminal"
 workspace "browser"
 workspace "files"
-workspace "notes"
 workspace "music"
 workspace "chat"
+workspace "extra"
 
 include "binds.kdl"
 include "outputs.kdl"
