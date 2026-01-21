@@ -8,6 +8,7 @@ workspace "extra"
 include "binds.kdl"
 include "outputs.kdl"
 include "window-rules.kdl"
+include "./noctalia.kdl"
 
 input {
     keyboard {
@@ -48,35 +49,6 @@ layout {
     }
 
    default-column-width {}
-
-    focus-ring {
-        off
-        width 2
-        active-color "#f38ba8"
-        inactive-color "#94e2d5"
-    }
-
-    border {
-        width 2
-        active-color "#f38ba8"
-        inactive-color "#585b70"
-        urgent-color "#9b0000"
-    }
-
-    shadow {
-        // on
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
-    }
-
-    struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
-    }
 }
 
 spawn-at-startup "noctalia-shell"
