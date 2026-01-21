@@ -10,7 +10,7 @@ mkpdir() {
 }
 
 createdKittySession() {
-    printf "layout tall\nnew_tab terminal\nlaunch bash\ncd %s/%s\nnew_tab yazi\nlaunch yazi\n" "$parentDir" "$projectName" >"$parentDir"/"$projectName"/launch.kitty-session
+    printf "layout tall\nnew_tab terminal\nlaunch bash\ncd %s/%s\nnew_tab yazi\ncd %s/%s\nlaunch yazi\n" "$parentDir" "$projectName" "$parentDir" "$projectName" >"$parentDir"/"$projectName"/launch.kitty-session
 }
 
 launchProject() {
