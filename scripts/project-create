@@ -6,11 +6,20 @@ parentDirChoice=
 languageChoice=
 
 mkpdir() {
-    mkdir "$1"/"$2"
+    mkdir "$parentDir"/"$projectName"
+}
+
+createdKittySession() {
+    printf "layout tall\nnew_tab terminal\nlaunch bash\ncd %s/%s\nnew_tab yazi\nlaunch yazi\n" "$parentDir" "$projectName" >"$parentDir"/"$projectName"/launch.kitty-session
+}
+
+launchProject() {
+    kitty --session "$parentDir"/"$projectName"/launch.kitty-session &
+    emacsclient "$parentDir"/"$projectName" &
 }
 
 createProject() {
-    case $1 in
+    case $languageChoice in
     rust)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
         echo
@@ -19,6 +28,7 @@ createProject() {
 
         cd "$parentDir" || exit
         cargo new "$projectName"
+        createdKittySession
         ;;
     go)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
@@ -31,16 +41,20 @@ createProject() {
         go mod init "$projectName"
         git init
         cat ~/nix-config/dotfiles/git/Go.gitignore >"$parentDir"/"$projectName"/.gitignore
+        createdKittySession
         ;;
     zig)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
         echo
         printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
         mkpdir "$parentDir" "$projectName"
         cd "$parentDir"/"$projectName" || exit
         zig init
         git init
         cat ~/nix-config/dotfiles/git/Zig.gitignore >"$parentDir"/"$projectName"/.gitignore
+        createdKittySession
         ;;
     python)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
@@ -50,15 +64,19 @@ createProject() {
 
         cd "$parentDir" || exit
         uv init "$projectName"
+        createdKittySession
         ;;
     *)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
         echo
         printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
         mkpdir "$parentDir" "$projectName"
         cd "$parentDir"/"$projectName" || exit
         git init
         cat ~/nix-config/dotfiles/git/C.gitignore >"$parentDir"/"$projectName"/.gitignore
+        createdKittySession
         ;;
     esac
 }
@@ -83,3 +101,7 @@ esac
 languageChoice=$(gum choose go rust zig c python)
 
 createProject "$languageChoice"
+
+echo '{{ Color "99" " Do you want to launch the project "}}' | gum format -t template
+sleep 1
+gum confirm && launchProject || exit
