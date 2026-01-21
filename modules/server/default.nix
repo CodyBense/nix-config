@@ -3,5 +3,6 @@
 {
   imports = [
     ./services.nix
+    ./minecraft.nix
   ];
 }
