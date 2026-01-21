@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.minecraft = {
+  services.minecraft-server = {
     enable = true;
     eula = true;
     declarative = true;
