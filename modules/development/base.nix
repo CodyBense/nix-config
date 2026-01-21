@@ -11,5 +11,6 @@
     sdbus-cpp
     pciutils
     nixd
+    nixfmt
   ];
 }
