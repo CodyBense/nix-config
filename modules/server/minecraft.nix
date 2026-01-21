@@ -9,6 +9,7 @@
     dataDir = "/home/${username}/minecraft-server/vanilla";
 
     serverProperties = {
+      # default port 25565
       gamemode = "survival";
       difficulty = "hard";
       simulation-distance = 10;
