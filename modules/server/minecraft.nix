@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 {
   services.minecraft-server = {
@@ -6,7 +6,7 @@
     eula = true;
     declarative = true;
 
-    dataDir = "~/minecraft-server/vanilla";
+    dataDir = "/home/${username}/minecraft-server/vanilla";
 
     serverProperties = {
       gamemode = "survival";
