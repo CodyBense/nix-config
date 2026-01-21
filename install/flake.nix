@@ -39,6 +39,9 @@
             mkdir -p $HOME/workspaces/projects
         fi
 
+        echo '{{ Color "99" " Linking scripts directory " }}' | ${pkgs.gum}/bin/gum format -t template
+        ln -s $HOME/nix-config/scripts $HOME/bin
+
         echo '{{ Color "99" " Completed setup " }}' | ${pkgs.gum}/bin/gum format -t template
         sleep 1
         echo '{{ Color "99" " Rebooting" }}' | ${pkgs.gum}/bin/gum format -t template
