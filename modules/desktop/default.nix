@@ -7,6 +7,7 @@
     ./browsers.nix
     ./fonts.nix
     ./gnome.nix
+    ./hibernation.nix
     ./kanata.nix
     ./networking.nix
     ./niri.nix
