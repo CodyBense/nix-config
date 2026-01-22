@@ -7,6 +7,9 @@
     gpu-screen-recorder
     matugen
     wlsunset
+    nwg-look
+    adw-gtk3
+    kdePackages.qt6ct
   ];
 
   # networkmanager and bluetooth enables in their owm modules
