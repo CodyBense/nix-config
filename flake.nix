@@ -36,6 +36,7 @@
       self,
       nixpkgs,
       home-manager,
+      nixarr,
       ...
     }@inputs:
     let
@@ -81,7 +82,7 @@
             ./hosts/pikachu/configuration.nix
             inputs.sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
-            inputs.nixarr.nixosModules.nixarr
+            nixarr.nixosModules.nixarr
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
