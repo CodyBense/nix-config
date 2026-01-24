@@ -24,15 +24,26 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixarr = {
+      url = "github:rasmus-kirk/nixarr";
+      inpuits.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @inputs:
-  let
-    system = "x86_64-linux";
-    username = "cody";
-    overlays = [
-    ];
-  in
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      username = "cody";
+      overlays = [
+      ];
+    in
     {
       nixosConfigurations = {
         "revan" = nixpkgs.lib.nixosSystem {
@@ -70,6 +81,7 @@
             ./hosts/pikachu/configuration.nix
             inputs.sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
+            inputs.nixarr.nixosModules.nixarr
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
