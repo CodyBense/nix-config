@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -122,6 +127,14 @@
     zellij
     zoxide
   ];
+
+  # nh
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clien.extraArgs = "--keep-since 4d --keep 5";
+    flake = "/home/${username}/nix-config";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
