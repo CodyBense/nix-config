@@ -33,7 +33,6 @@
       peerPort = 50000;
     };
 
-    # can run these through a vpn
     bazarr = {
       enable = true;
       vpn.enable = true;
