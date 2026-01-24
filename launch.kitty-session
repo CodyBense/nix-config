@@ -1,0 +1,7 @@
+layout tall
+new_tab terminal
+launch bash
+cd /home/cody/nix-config
+new_tab yazi
+cd /home/cody/nix-config
+launch yazi
