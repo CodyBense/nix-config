@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/server
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/server
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -54,8 +54,11 @@
   users.users.cody = {
     isNormalUser = true;
     description = "cody";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -73,7 +76,12 @@
     zoxide
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  services.gnome.gnome-keyring.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
