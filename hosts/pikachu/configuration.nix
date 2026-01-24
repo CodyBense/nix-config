@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -80,7 +85,7 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    clien.extraArgs = "--keep-since 4d --keep 5";
+    clean.extraArgs = "--keep-since 4d --keep 5";
     flake = "/home/${username}/nix-config";
   };
 

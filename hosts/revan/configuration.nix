@@ -132,7 +132,7 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    clien.extraArgs = "--keep-since 4d --keep 5";
+    clean.extraArgs = "--keep-since 4d --keep 5";
     flake = "/home/${username}/nix-config";
   };
 
