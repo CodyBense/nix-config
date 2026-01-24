@@ -5,12 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/desktop
-      ../../modules/development
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/desktop
+    ../../modules/development
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -57,9 +57,13 @@
   users.users.cody = {
     isNormalUser = true;
     description = "cody";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "input"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -67,7 +71,10 @@
   nixpkgs.config.allowUnfree = true;
 
   # Allow nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -106,6 +113,7 @@
     waybar
     wf-recorder
     wget
+    wireguard-tools
     wl-clipboard
     yazi
     zathura
