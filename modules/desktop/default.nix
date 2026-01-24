@@ -12,5 +12,6 @@
     ./networking.nix
     ./niri.nix
     ./storage.nix
+    ./virtualisation.nix
   ];
 }
