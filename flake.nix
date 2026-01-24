@@ -27,7 +27,7 @@
 
     nixarr = {
       url = "github:rasmus-kirk/nixarr";
-      inpuits.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
