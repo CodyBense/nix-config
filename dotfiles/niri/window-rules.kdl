@@ -41,6 +41,7 @@ window-rule {
 
 window-rule {
     match app-id="protonvpn-app"
+    match app-id="VirtualBox Manager"
     open-on-workspace "extra"
 }
 
