@@ -34,12 +34,30 @@
     };
 
     # can run these through a vpn
-    bazarr.enable = true;
-    lidarr.enable = true;
-    prowlarr.enable = true;
-    radarr.enable = true;
-    readarr.enable = true;
-    sonarr.enable = true;
+    bazarr = {
+      enable = true;
+      vpn.enable = true;
+    };
+    lidarr = {
+      enable = true;
+      vpn.enable = true;
+    };
+    prowlarr = {
+      enable = true;
+      vpn.enable = true;
+    };
+    radarr = {
+      enable = true;
+      vpn.enable = true;
+    };
+    readarr = {
+      enable = true;
+      vpn.enable = true;
+    };
+    sonarr = {
+      enable = true;
+      vpn.enable = true;
+    };
     jellyseerr.enable = true;
   };
 }
