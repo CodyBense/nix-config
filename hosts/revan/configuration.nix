@@ -106,7 +106,6 @@
     lazygit
     neovim
     protonvpn-gui
-    proton-vpn-cli
     rofi
     rsync
     spotify
