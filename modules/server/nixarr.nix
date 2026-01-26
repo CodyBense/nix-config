@@ -62,5 +62,7 @@
 
   services.qbittorrent = {
     enable = true;
+    openFirewall = true;
+    webuiPort = 58080;
   };
 }
