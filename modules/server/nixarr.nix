@@ -59,4 +59,8 @@
     };
     jellyseerr.enable = true;
   };
+
+  services.qbittorrent = {
+    enable = true;
+  };
 }
