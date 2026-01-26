@@ -60,11 +60,4 @@
     };
     jellyseerr.enable = true;
   };
-
-  services.qbittorrent = {
-    enable = true;
-    openFirewall = true;
-    webuiPort = 58080;
-    user = "${username}";
-  };
 }
