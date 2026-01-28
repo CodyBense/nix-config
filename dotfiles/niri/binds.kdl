@@ -31,7 +31,7 @@ binds {
     Mod+Shift+R { spawn "restart-waybar.sh"; }
     // Mod+N { spawn-sh "swaync-client -t -sw"; }
     Mod+N { spawn-sh "noctalia-shell ipc call notifications toggleHistory"; }
-    Mod+Alt+N { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Ctrl+N { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Shift+N { spawn "~/.config/niri/scripts/notes-launcher-emacs.sh"; }
     Mod+Shift+T { spawn-sh "change-theme.sh"; }
     Mod+B { spawn-sh "~/.config/niri/scripts/bookmarks.sh"; }
@@ -51,6 +51,8 @@ binds {
     Mod+Alt+t { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
     //Projects
     Mod+Alt+p { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/projects.org\"))'"; }
+    //Notes
+    Mod+Alt+n { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/notes.org\"))'"; }
 
     // Window management
     Mod+Left  { focus-column-left; }
