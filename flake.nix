@@ -10,11 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +36,8 @@
       self,
       nixpkgs,
       home-manager,
+      agenix,
+      nixarr,
       ...
     }@inputs:
     let
@@ -60,8 +57,7 @@
           modules = [
             ./hosts/revan/configuration.nix
             ./modules/desktop/noctalia.nix
-            inputs.sops-nix.nixosModules.sops
-            inputs.agenix.nixosModules.default
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
@@ -85,10 +81,9 @@
           };
           modules = [
             ./hosts/pikachu/configuration.nix
-            inputs.sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
-            inputs.nixarr.nixosModules.default
-            inputs.agenix.nixosModules.default
+            nixarr.nixosModules.default
+            agenix.nixosModules.default
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
