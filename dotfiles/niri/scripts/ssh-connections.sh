@@ -10,7 +10,7 @@ vault)
     kitty --title "${connections}" ssh "${username[0]}"@"${connections}"
     ;;
 pikachu)
-    kitty --title "${connections}" ssh ssh "${username[1]}"@"${connections}"
+    kitty --title "${connections}" ssh "${username[1]}"@"${connections}"
     ;;
 192.168.1.129)
     kitty --title "${connections}" ssh "${username[2]}"@"${connections}"
