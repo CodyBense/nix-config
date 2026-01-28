@@ -24,11 +24,6 @@
       url = "github:rasmus-kirk/nixarr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -36,7 +31,6 @@
       self,
       nixpkgs,
       home-manager,
-      agenix,
       nixarr,
       ...
     }@inputs:
@@ -57,7 +51,6 @@
           modules = [
             ./hosts/revan/configuration.nix
             ./modules/desktop/noctalia.nix
-            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
@@ -83,7 +76,6 @@
             ./hosts/pikachu/configuration.nix
             home-manager.nixosModules.home-manager
             nixarr.nixosModules.default
-            agenix.nixosModules.default
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
