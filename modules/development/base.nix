@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -9,6 +14,7 @@
     libtool
     gnumake
     sdbus-cpp
+    sqlite
     pciutils
     nixd
     nixfmt
