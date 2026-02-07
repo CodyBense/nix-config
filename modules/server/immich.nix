@@ -5,7 +5,7 @@
   ...
 }:
 let
-  HOME = "/home/codybense";
+  HOME = "/home/cody";
 in
 
 {
