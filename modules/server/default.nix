@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./services.nix
+    ./tailscale.nix
     ./minecraft.nix
     ./nixarr.nix
     ./immich.nix
