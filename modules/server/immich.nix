@@ -12,6 +12,6 @@ in
   services.immich = {
     enable = true;
     port = 2283;
-    mediadlocations = "${HOME}/Photos/immich";
+    mediaLocation = "${HOME}/Photos/immich";
   };
 }
