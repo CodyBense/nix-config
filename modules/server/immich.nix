@@ -13,5 +13,6 @@ in
     enable = true;
     port = 2283;
     mediaLocation = "${HOME}/Photos/immich";
+    openFirewall = true;
   };
 }
