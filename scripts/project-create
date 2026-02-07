@@ -66,8 +66,23 @@ createProject() {
         uv init "$projectName"
         createdKittySession
         ;;
+    bash)
+        echo '{{ Color "99" " Creating a bash project "}}' | gum format -t template
+        echo
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
+        echo
+
+        mkpdir "$parentDir" "$projectName"
+        cd "$parentDir"/"$projectName" || exit
+        git init
+        touch "$projectName"
+        printf "#!/usr/bin/env bash\n\n" >"$projectName"
+        chmod +x "$projectName"
+
+        createdKittySession
+        ;;
     *)
-        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo '{{ Color "99" " Creating a project "}}' | gum format -t template
         echo
         printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | gum format -t template
         echo
@@ -98,7 +113,7 @@ github)
     ;;
 esac
 
-languageChoice=$(gum choose go rust zig c python)
+languageChoice=$(gum choose go rust zig c python bash)
 
 createProject "$languageChoice"
 
