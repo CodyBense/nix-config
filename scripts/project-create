@@ -1,97 +1,97 @@
 #!/usr/bin/env bash
 
-PROJECTNAME=
-PARENTDIR=
-PARETNDIRCHOICE=
-LANGUAGECHOICE=
-
 mkpdir() {
-    mkdir "$PARENTDIR"/"$PROJECTNAME"
+    mkdir "$1"/"$2"
 }
 
 createdKittySession() {
-    printf "layout tall\nnew_tab terminal\nlaunch bash\ncd %s/%s\nnew_tab yazi\ncd %s/%s\nlaunch yazi\n" "$PARENTDIR" "$PROJECTNAME" "$PARENTDIR" "$PROJECTNAME" >"$PARENTDIR"/"$PROJECTNAME"/launch.kitty-session
+    local parentdir="$1"
+    local projectname="$2"
+    printf "layout tall\nnew_tab terminal\ncd %s/%s\nlaunch bash\nnew_tab yazi\ncd %s/%s\nlaunch yazi\n" \
+        "$parentdir" "$projectname" \
+        "$parentdir" "$projectname" \
+        >"$parentdir"/"$projectname"/launch.kitty-session
+    sync
 }
 
 launchProject() {
-    kitty --session "$PARENTDIR"/"$PROJECTNAME"/launch.kitty-session &
-    emacsclient "$PARENTDIR"/"$PROJECTNAME" &
+    local parentdir="$1"
+    local projectname="$2"
+    setsid kitty --instance-group "$projectname" --session "$parentdir"/"$projectname"/launch.kitty-session &
+    emacsclient -n -a "" "$parentdir"/"$projectname" &
 }
 
 createProject() {
-    case $LANGUAGECHOICE in
+    local languagechoice="$1"
+    local parentdir="$2"
+    local projectname="$3"
+
+    case $languagechoice in
     rust)
         echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        cd "$PARENTDIR" || exit
-        cargo new "$PROJECTNAME"
-        createdKittySession
+        cd "$parentdir" || exit
+        cargo new "$projectname"
+        createdKittySession "$parentdir" "$projectname"
         ;;
     go)
-        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo '{{ Color "99" " Creating a go project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        mkpdir "$PARENTDIR" "$PROJECTNAME"
-        cd "$PARENTDIR"/"$PROJECTNAME" || exit
-        go mod init "$PROJECTNAME"
+        mkpdir "$parentdir" "$projectname"
+        cd "$parentdir"/"$projectname" || exit
+        go mod init "$projectname"
         git init
-        cat ~/nix-config/dotfiles/git/Go.gitignore >"$PARENTDIR"/"$PROJECTNAME"/.gitignore
-        createdKittySession
+        cat ~/nix-config/dotfiles/git/Go.gitignore >"$parentdir"/"$projectname"/.gitignore
+        createdKittySession "$parentdir" "$projectname"
         ;;
     zig)
-        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo '{{ Color "99" " Creating a zig project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        mkpdir "$PARENTDIR" "$PROJECTNAME"
-        cd "$PARENTDIR"/"$PROJECTNAME" || exit
+        mkpdir "$parentdir" "$projectname"
+        cd "$parentdir"/"$projectname" || exit
         zig init
         git init
-        cat ~/nix-config/dotfiles/git/Zig.gitignore >"$PARENTDIR"/"$PROJECTNAME"/.gitignore
-        createdKittySession
+        cat ~/nix-config/dotfiles/git/Zig.gitignore >"$parentdir"/"$projectname"/.gitignore
+        createdKittySession "$parentdir" "$projectname"
         ;;
     python)
-        echo '{{ Color "99" " Creating a rust project "}}' | gum format -t template
+        echo '{{ Color "99" " Creating a python project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        cd "$PARENTDIR" || exit
-        uv init "$PROJECTNAME"
-        createdKittySession
+        cd "$parentdir" || exit
+        uv init "$projectname"
+        createdKittySession "$parentdir" "$projectname"
         ;;
     bash)
         echo '{{ Color "99" " Creating a bash project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        mkpdir "$PARENTDIR" "$PROJECTNAME"
-        cd "$PARENTDIR"/"$PROJECTNAME" || exit
+        mkpdir "$parentdir" "$projectname"
+        cd "$parentdir"/"$projectname" || exit
         git init
-        touch "$PROJECTNAME"
-        printf "#!/usr/bin/env bash\n\n" >"$PROJECTNAME"
-        chmod +x "$PROJECTNAME"
-
-        createdKittySession
+        cat ~/nix-config/dotfiles/git/Shell.gitignore >"$parentdir"/"$projectname"/.gitignore
+        printf "#!/usr/bin/env bash\n\n" >"$projectname"
+        chmod +x "$projectname"
+        createdKittySession "$parentdir" "$projectname"
         ;;
     *)
         echo '{{ Color "99" " Creating a project "}}' | gum format -t template
         echo
-        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$PARENTDIR" "$PROJECTNAME" | gum format -t template
+        printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentdir" "$projectname" | gum format -t template
         echo
-
-        mkpdir "$PARENTDIR" "$PROJECTNAME"
-        cd "$PARENTDIR"/"$PROJECTNAME" || exit
+        mkpdir "$parentdir" "$projectname"
+        cd "$parentdir"/"$projectname" || exit
         git init
-        cat ~/nix-config/dotfiles/git/C.gitignore >"$PARENTDIR"/"$PROJECTNAME"/.gitignore
-        createdKittySession
+        cat ~/nix-config/dotfiles/git/C.gitignore >"$parentdir"/"$projectname"/.gitignore
+        createdKittySession "$parentdir" "$projectname"
         ;;
     esac
 }
@@ -102,25 +102,34 @@ main() {
         --align center --width 50 --margin "1 2" --padding "2 4" \
         'Create a new project'
 
-    PROJECTNAME=$(gum input --placeholder "Project Name")
-    PARETNDIRCHOICE=$(gum choose github projects)
+    local projectname
+    projectname=$(gum input --placeholder "Project Name")
+    [[ -z "$projectname" ]] && exit 1
 
-    case $PARETNDIRCHOICE in
+    local parentdirchoice
+    parentdirchoice=$(gum choose github projects)
+
+    local parentdir
+    case $parentdirchoice in
     github)
-        PARENTDIR=$HOME/workspaces/github/CodyBense
+        parentdir=$HOME/workspaces/github/CodyBense
         ;;
     *)
-        PARENTDIR=$HOME/workspaces/projects
+        parentdir=$HOME/workspaces/projects
         ;;
     esac
 
-    LANGUAGECHOICE=$(gum choose go rust zig c python bash)
+    local languagechoice
+    languagechoice=$(gum choose go rust zig c python bash)
 
-    createProject "$LANGUAGECHOICE"
+    createProject "$languagechoice" "$parentdir" "$projectname"
 
     echo '{{ Color "99" " Do you want to launch the project "}}' | gum format -t template
     sleep 1
-    gum confirm && launchProject || exit
+    # gum confirm && launchProject "$parentdir" "$projectname" || exit
+    if gum confirm; then
+        launchProject "$parentdir" "$projectname"
+    fi
 }
 
 main
