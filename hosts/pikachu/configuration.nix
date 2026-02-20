@@ -23,10 +23,12 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "pikachu"; # Define your hostname.
-  networking.interfaces.ens10.ipv4.addresses = {
-    address = "192.168.1.153";
-    prefixLength = 24;
-  };
+  networking.interfaces.ens10.ipv4.addresses = [
+    {
+      address = "192.168.1.153";
+      prefixLength = 24;
+    }
+  ]
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
