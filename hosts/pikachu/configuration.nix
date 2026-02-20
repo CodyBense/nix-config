@@ -25,6 +25,7 @@
   networking.hostName = "pikachu"; # Define your hostname.
   networking.interfaces.ens18.ipv4.addresses = [
     {
+      useDHCP = false;
       address = "192.168.1.153";
       prefixLength = 24;
     }
