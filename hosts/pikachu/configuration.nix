@@ -23,7 +23,7 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "pikachu"; # Define your hostname.
-  networking.interfaces.ens10.ipv4.addresses = [
+  networking.interfaces.ens18.ipv4.addresses = [
     {
       address = "192.168.1.153";
       prefixLength = 24;
