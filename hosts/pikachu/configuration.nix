@@ -28,7 +28,7 @@
       address = "192.168.1.153";
       prefixLength = 24;
     }
-  ]
+  ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
