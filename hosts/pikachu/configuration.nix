@@ -23,14 +23,17 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "pikachu"; # Define your hostname.
-  networking.interfaces.ens18 = {
-    useDHCP = false;
-    ipv4.addresses = [
-      {
-        address = "192.168.1.153";
-        prefixLength = 24;
-      }
-    ];
+  networking = {
+    interfaces.ens18 = {
+      useDHCP = false;
+      ipv4.addresses = [
+        {
+          address = "192.168.1.153";
+          prefixLength = 24;
+        }
+      ];
+    };
+    defaultGateway = "192.168.1.1";
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
