@@ -15,30 +15,21 @@ binds {
     Mod+O { spawn-sh "obsidian"; }
 
     // Utilities
-    // Mod+Backspace { spawn "wlogout"; }
     Mod+Backspace { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
-    Mod+Period { spawn-sh "rofi -modi emoji -show emoji"; }
-    Mod+Alt+L {spawn "hyprlock"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86MonBrightnessUp { spawn-sh "brightnessctl set +5%"; }
     XF86MonBrightnessDown { spawn-sh "brightnessctl set 5%-"; }
-    // Mod+Shift+W { spawn "change-wallpaper.sh"; }
     Mod+Shift+W { spawn-sh "noctalia-shell ipc call wallpaper toggle"; }
     Mod+Shift+M { spawn "~/.config/niri/scripts/niri-monitor-toggle.sh"; }
-    Mod+Shift+R { spawn "restart-waybar.sh"; }
-    // Mod+N { spawn-sh "swaync-client -t -sw"; }
     Mod+N { spawn-sh "noctalia-shell ipc call notifications toggleHistory"; }
     Mod+Ctrl+N { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Shift+N { spawn "~/.config/niri/scripts/notes-launcher-emacs.sh"; }
-    Mod+Shift+T { spawn-sh "change-theme.sh"; }
-    Mod+B { spawn-sh "~/.config/niri/scripts/bookmarks.sh"; }
     Mod+Shift+S { spawn-sh "~/.config/niri/scripts/ssh-connections.sh"; }
     Mod+Q { close-window; }
     Mod+C { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
-    //Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch-zellij.sh"; }
     Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch.sh"; }
     Mod+Ctrl+P { spawn-sh "kitty project-create"; }
     //EMACS
