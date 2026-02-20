@@ -16,5 +16,5 @@ This is my shitty NixOS config. I will be doing at least a whole year on NixOS, 
 
 To install run the following command in the root dir of the project
 #+begin_src bash
-nix run --extra-experiemntal-features 'nix-command flakes' ./install#
+nix run --extra-experimental-features 'nix-command flakes' ./install#
 #+end_src
