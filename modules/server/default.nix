@@ -7,9 +7,10 @@
 
 {
   imports = [
-    ./tailscale.nix
+    ./immich.nix
     ./minecraft.nix
     ./nixarr.nix
-    ./immich.nix
+    ./pihole.nix
+    ./tailscale.nix
   ];
 }
