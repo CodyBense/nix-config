@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c79c008d-2b93-42f0-a57d-859d215d8ae0";
+    { device = "/dev/disk/by-uuid/d202d26c-db1d-4671-a489-9bb138dd73f8";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/1f623965-617c-4971-8e2b-db949437e101"; }
+    [ { device = "/dev/disk/by-uuid/b23edde2-bedd-434a-873d-d1fc4c11d101"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
