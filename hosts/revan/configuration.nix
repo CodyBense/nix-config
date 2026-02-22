@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ../../modules/desktop
     ../../modules/development
+    ../../modules/fabrication
   ];
 
   # Bootloader.
