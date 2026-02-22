@@ -6,6 +6,7 @@
     ./bluetooth.nix
     ./browsers.nix
     ./fonts.nix
+    ./gaming.nix
     ./gnome.nix
     ./hibernation.nix
     ./kanata.nix
