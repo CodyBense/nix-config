@@ -9,8 +9,13 @@
   services.pihole-ftl = {
     enable = true;
     openFirewallDNS = true;
+    openFirewallDHCP = true;
+    openFirewallWebserver = true;
+    queryLogDeleter.enable = true;
 
     settings = {
+      dhcp = false;
+      ipv6 = false;
       dns.upstream = [ "1.1.1.1" ];
       hosts = [ "192.168.1.153" ];
     };
