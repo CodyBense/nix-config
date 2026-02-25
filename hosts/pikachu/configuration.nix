@@ -16,7 +16,6 @@
     ../../modules/server
     ../../modules/shares
     ../../modules/development/doom.nix
-    ../../modules/home-manager/emacs.nix
   ];
 
   # Bootloader.
