@@ -15,6 +15,8 @@
     ./hardware-configuration.nix
     ../../modules/server
     ../../modules/shares
+    ../../modules/development/doom.nix
+    ../../modules/home-manager/emacs.nix
   ];
 
   # Bootloader.
@@ -34,7 +36,7 @@
       ];
     };
     defaultGateway = "192.168.1.1";
-    nameservers = ["1.1.1.1"];
+    nameservers = [ "1.1.1.1" ];
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
