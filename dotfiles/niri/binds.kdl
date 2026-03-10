@@ -34,17 +34,23 @@ binds {
     Mod+Ctrl+P { spawn-sh "kitty project-create"; }
     //EMACS
     //Capture buffer
-    Ctrl+Shift+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (org-capture))'"; }
+    //Ctrl+Shift+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (org-capture))'"; }
+    Ctrl+Shift+c { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (org-capture))'"; }
     //Calender
-    Mod+Alt+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (calfw-org-open-calendar))'"; }
+    //Mod+Alt+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (calfw-org-open-calendar))'"; }
+    Mod+Alt+c { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (calfw-org-open-calendar))'"; }
     //Bookmarks
-    Mod+Alt+b { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/bookmarks.org\"))'"; }
+    //Mod+Alt+b { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/bookmarks.org\"))'"; }
+    Mod+Alt+b { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/bookmarks.org\"))'"; }
     //Todo
-    Mod+Alt+t { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
+    //Mod+Alt+t { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
+    Mod+Alt+t { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/inbox.org\"))'"; }
     //Projects
-    Mod+Alt+p { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/projects.org\"))'"; }
+    //Mod+Alt+p { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/projects.org\"))'"; }
+    Mod+Alt+p { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/projects.org\"))'"; }
     //Notes
-    Mod+Alt+n { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/notes.org\"))'"; }
+    //Mod+Alt+n { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/notes.org\"))'"; }
+    Mod+Alt+n { spawn-sh "emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/notes.org\"))'"; }
 
     // Window management
     Mod+Left  { focus-column-left; }
