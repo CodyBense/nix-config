@@ -14,4 +14,8 @@
     ./pihole.nix
     ./tailscale.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    wakeonlan
+  ];
 }
