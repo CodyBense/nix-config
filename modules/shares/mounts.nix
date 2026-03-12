@@ -7,7 +7,7 @@
 
 {
   fileSystems."/mnt/vault" = {
-    device = "//vault/data";
+    device = "//192.168.1.243/data";
     fsType = "cifs";
     options =
       let
