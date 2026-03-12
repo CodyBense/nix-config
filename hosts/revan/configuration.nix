@@ -16,6 +16,7 @@
     ../../modules/desktop
     ../../modules/development
     ../../modules/fabrication
+    ../../modules/shares
   ];
 
   # Bootloader.
