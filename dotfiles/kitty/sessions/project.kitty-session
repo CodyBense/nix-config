@@ -1,0 +1,9 @@
+layout tall
+
+cd $DIR
+
+new_tab terminal
+launch bash
+
+new_tab yazi
+launch yazi

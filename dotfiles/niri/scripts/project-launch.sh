@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -eu
 
 check_project_session() {
     local session_name=""
@@ -16,11 +15,11 @@ options=$(printf "${other_projects}\n$(ls $DIR)\n" | rofi -dmenu -p "Projects: "
 
 case "${options}" in
 nix-config)
-    kitty --session "$HOME"/nix-config/launch.kitty-session &
+    kitty --session "$HOME"/nix-config/project.kitty-session -d ~/nix-config &
     emacsclient -n "$HOME"/nix-config
     ;;
 *)
-    kitty --title "$options" --session "$DIR"/"$options"/launch.kitty-session &
+    kitty --title "$options" --session "$HOME"/nix-config/dotfiles/kitty/sessions/project.kitty-session -d "$DIR"/"$options" &
     emacsclient -n $DIR/$options
     ;;
 esac
