@@ -11,6 +11,7 @@
         pdf-tools
         org-roam
         treesit-grammars.with-all-grammars
+        mu4e
       ];
   };
 

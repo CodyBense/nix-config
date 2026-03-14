@@ -258,3 +258,55 @@
 
 (after! nix-mode
   (setq nix-nixfmt-bin "nixfmt"))
+
+;; mu4e
+(after! mu4e
+  (setq mu4e-compose-complete-addresses nil)
+
+  (defun my/update-last-contacted ()
+    (when (and (derived-mode-p 'mu4e-compose-mode)
+               mu4e-compose-parent-message)
+      (when-let* ((from (mu4e-message-field mu4e-compose-parent-message :from))
+                  (email (if (stringp from) from (cdar from))))
+        (when (stringp email)
+          (with-current-buffer (find-file-noselect my/contacts-file)
+            (save-excursion
+              (goto-char (point-min))
+              (when (search-forward email nil t)
+                (org-back-to-heading)
+                (org-set-property "LAST_CONTACTED"
+                                  (format-time-string "[%Y-%m-%d %a %H:%M]"))
+                (save-buffer))))))))
+
+  (add-hook 'mu4e-compose-mode-hook #'my/update-last-contacted))
+;; Make system mu4e visible to Doom
+(when-let ((mu4e-path (car (split-string
+                            (shell-command-to-string
+                             "find /nix/store -name 'mu4e.el' -path '*/share/emacs/site-lisp/*' 2>/dev/null | head -1")
+                            "\n"))))
+  (when (file-exists-p mu4e-path)
+    (add-to-list 'load-path (file-name-directory mu4e-path))))
+
+(after! mu4e
+  (setq mu4e-mu-binary (executable-find "mu"))
+  (setq mu4e-update-interval (* 10 60))
+  (load (expand-file-name "private/mu4e-config.el" doom-private-dir)))
+
+;; open mail links in mu4e
+(defun mu4e-compose-mailto (url)
+  "Compose from mailto: URL."
+  (require 'url-parse)
+  (require 'mu4e)
+  (let* ((parsed (url-generic-parse-url url))
+         (to (url-filename parsed))
+         (query (url-target parsed))
+         (headers (when query (url-parse-query-string query))))
+    (mu4e-compose-new)
+    (message-goto-to)
+    (insert to)
+    (when-let ((subject (cadr (assoc "subject" headers))))
+      (message-goto-subject)
+      (insert (url-unhex-string subject)))
+    (when-let ((body (cadr (assoc "body" headers))))
+      (message-goto-body)
+      (insert (url-unhex-string body)))))
