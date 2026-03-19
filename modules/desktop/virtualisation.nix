@@ -11,7 +11,8 @@
   ];
 
   virtualisation.docker.enable = true;
-  users.users.cody.extraGroup = [ "docker" ];
+  users.users.cody.extraGroups = [ "docker" ];
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "cody" ];
 }
