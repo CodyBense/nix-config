@@ -30,7 +30,7 @@ binds {
     Mod+Shift+S { spawn-sh "~/.config/niri/scripts/ssh-connections.sh"; }
     Mod+Q { close-window; }
     Mod+C { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
-    Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch-v2.sh"; }
+    Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch.sh"; }
     Mod+Ctrl+P { spawn-sh "kitty project-create"; }
     //EMACS
     //Capture buffer
