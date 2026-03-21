@@ -93,6 +93,7 @@
     neovim
     proton-vpn-cli
     starship
+    television
     wget
     zoxide
   ];
