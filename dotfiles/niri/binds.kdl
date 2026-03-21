@@ -31,7 +31,7 @@ binds {
     Mod+Q { close-window; }
     Mod+C { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
     Mod+Shift+P { spawn-sh "~/.config/niri/scripts/project-launch.sh"; }
-    Mod+Ctrl+P { spawn-sh "kitty project-create"; }
+    Mod+Ctrl+P { spawn-sh "kitty --app-id project-create project-create"; }
     //EMACS
     //Capture buffer
     //Ctrl+Shift+c { spawn-sh "~/.config/niri/scripts/emacs-launcher '(progn (select-frame-set-input-focus (selected-frame)) (org-capture))'"; }
