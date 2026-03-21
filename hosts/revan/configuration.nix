@@ -113,6 +113,7 @@
     spotify
     swaynotificationcenter
     starship
+    television
     tree
     unzip
     vlc
