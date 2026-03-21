@@ -46,7 +46,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id="project-launch"
+    open-floating true
+    default-column-width { fixed 1400; }
+    default-window-height { fixed 1000; }
+}
+
+window-rule {
     // geometry-corner-radius 20
     clip-to-geometry true
 }
-
