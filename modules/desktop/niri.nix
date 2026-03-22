@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-	programs.niri.enable = true;
+  programs.niri.enable = true;
 
-	environment.systemPackages = with pkgs; [
-		kitty
-		xwayland-satellite
-	];
+  environment.systemPackages = with pkgs; [
+    kitty
+    xwayland-satellite
+  ];
 }
