@@ -74,8 +74,8 @@
           };
           modules = [
             ./hosts/pikachu/configuration.nix
-            home-manager.nixosModules.home-manager
             nixarr.nixosModules.default
+            home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
