@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./databases.nix
     ./docker.nix
     ./immich.nix
     ./minecraft.nix
