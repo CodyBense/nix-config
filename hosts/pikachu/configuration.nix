@@ -92,6 +92,7 @@
     fzf
     git
     neovim
+    wireguard-tools
     proton-vpn-cli
     starship
     wget
@@ -132,6 +133,7 @@
   networking.firewall.allowedUDPPorts = [ 9 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall.checkReversePath = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
