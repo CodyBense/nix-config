@@ -26,6 +26,7 @@
   networking.hostName = "pikachu"; # Define your hostname.
   networking = {
     interfaces.ens18 = {
+      wakeOnLan.enable = true;
       useDHCP = false;
       ipv4.addresses = [
         {
@@ -128,7 +129,7 @@
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 9 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
