@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.git = {
@@ -6,8 +11,8 @@
     settings = {
       user.name = "CodyBense";
       user.email = "codybense@gmail.com";
+      init.defaultBranch = "master";
     };
-    extraConfig.init.defaultBranch = "master";
   };
 
   programs.gh = {
