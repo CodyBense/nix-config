@@ -10,6 +10,7 @@
     gcc
     glibc
     clang
+    clang-tools
     cmake
     libtool
     gnumake
