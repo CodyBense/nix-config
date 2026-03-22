@@ -6,7 +6,7 @@
 }:
 
 {
-  config.services.postgres = {
+  config.services.postgresql = {
     enable = true;
     ensureDatabases = [ "test" ];
     authentication = pkgs.lib.mkOverride 10 ''
