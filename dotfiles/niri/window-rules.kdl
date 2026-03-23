@@ -36,6 +36,7 @@ window-rule {
 
 window-rule {
     match app-id="viber"
+    match app-id="vesktop"
     open-on-workspace "chat"
 }
 
