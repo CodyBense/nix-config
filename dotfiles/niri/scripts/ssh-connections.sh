@@ -2,8 +2,10 @@
 
 FILE=$HOME/.local/share/ssh-connections.txt
 
-connections=$(cat "${FILE}" | cut --delimiter ',' --fields 1 | rofi -dmenu -p "connections: ") || exit 0
+kitty --app-id ssh-connections -o font_features=none -e bash -c "cat ${FILE} | cut --delimiter ',' --fields 1 | tv > /tmp/ssh-connections"
+
 mapfile -t username < <(cat "${FILE}" | cut --delimiter ',' --fields 2) || exit 0
+connections=$(cat /tmp/ssh-connections)
 
 case "${connections}" in
 vault)
