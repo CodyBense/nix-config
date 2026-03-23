@@ -49,6 +49,7 @@ window-rule {
 window-rule {
     match app-id="project-launch"
     match app-id="project-create"
+    match app-id="ssh-connections"
     open-floating true
     default-column-width { fixed 1400; }
     default-window-height { fixed 1000; }
