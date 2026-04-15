@@ -106,6 +106,7 @@
     jq
     jqp
     lazygit
+    localsend
     neovim
     protonvpn-gui
     rofi
