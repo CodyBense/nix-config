@@ -83,6 +83,9 @@
     "flakes"
   ];
 
+  # for helium browser install
+  security.chromiumSandbox.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -102,6 +105,7 @@
     git
     grimblast
     gum
+    helium-broswer
     imv
     jq
     jqp

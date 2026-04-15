@@ -38,6 +38,9 @@
       system = "x86_64-linux";
       username = "cody";
       overlays = [
+        (final: prev: {
+          helium-browser = final.callPackage ./pkgs/helium-browser.nix { };
+        })
       ];
     in
     {
