@@ -12,6 +12,7 @@
     ./immich.nix
     ./minecraft.nix
     ./nixarr.nix
+    ./ollama.nix
     #./pihole.nix
     ./tailscale.nix
   ];
