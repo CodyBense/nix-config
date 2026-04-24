@@ -9,7 +9,8 @@ binds {
     // Mod+Space { spawn-sh "tofi-drun --drun-launch=true"; }
     // Mod+Space { spawn-sh "rofi -show drun"; }
     Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Mod+F { spawn "zen"; }
+    //Mod+F { spawn "zen"; }
+    Mod+F { spawn "helium"; }
     // Mod+M { spawn "spotify"; }
     Mod+M { spawn-sh "spotify-player.sh"; }
     Mod+O { spawn-sh "obsidian"; }

@@ -6,6 +6,7 @@
   config,
   pkgs,
   username,
+  inputs,
   ...
 }:
 
@@ -84,7 +85,7 @@
   ];
 
   # for helium browser install
-  security.chromiumSandbox.enable = true;
+  security.chromiumSuidSandbox.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -105,11 +106,13 @@
     git
     grimblast
     gum
-    helium-broswer
+    inputs.helium.packages.${system}.default
+    # helium-browser
     imv
     jq
     jqp
     lazygit
+    libreoffice
     localsend
     neovim
     protonvpn-gui

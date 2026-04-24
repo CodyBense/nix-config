@@ -24,6 +24,11 @@
       url = "github:rasmus-kirk/nixarr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
+      inputs.nixokgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -38,9 +43,6 @@
       system = "x86_64-linux";
       username = "cody";
       overlays = [
-        (final: prev: {
-          helium-browser = final.callPackage ./pkgs/helium-browser.nix { };
-        })
       ];
     in
     {
@@ -54,6 +56,13 @@
           modules = [
             ./hosts/revan/configuration.nix
             ./modules/desktop/noctalia.nix
+            # {
+            #   nixpkgs.overlays = [
+            #     (final: prev: {
+            #       helium-browser = final.callPackage ./pkgs/helium-browser.nix { };
+            #     })
+            #   ];
+            # }
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
