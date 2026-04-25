@@ -39,7 +39,7 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 0,
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
@@ -153,6 +153,19 @@
                         "minimumThreshold": 10
                     },
                     "id": "plugin:catwalk"
+                },
+                {
+                    "defaultSettings": {
+                        "activeBackend": "qt6-multimedia",
+                        "automationMode": "random",
+                        "automationTime": 300,
+                        "fillMode": "fit",
+                        "mpvSocket": "/tmp/mpv-socket",
+                        "profile": "default",
+                        "volume": 1,
+                        "wallpapersFolder": "~/Pictures/Wallpapers"
+                    },
+                    "id": "plugin:video-wallpaper"
                 }
             ],
             "right": [
@@ -226,19 +239,6 @@
                     "icon": "",
                     "id": "ControlCenter",
                     "useDistroLogo": true
-                },
-                {
-                    "defaultSettings": {
-                        "activeBackend": "qt6-multimedia",
-                        "automationMode": "random",
-                        "automationTime": 300,
-                        "fillMode": "fit",
-                        "mpvSocket": "/tmp/mpv-socket",
-                        "profile": "default",
-                        "volume": 1,
-                        "wallpapersFolder": "~/Pictures/Wallpapers"
-                    },
-                    "id": "plugin:video-wallpaper"
                 }
             ]
         }
@@ -311,7 +311,7 @@
                 "id": "media-sysmon-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             }
         ],
@@ -347,11 +347,16 @@
     },
     "desktopWidgets": {
         "enabled": false,
-        "gridSnap": false,
+        "gridSnap": true,
         "gridSnapScale": false,
         "monitorWidgets": [
             {
                 "name": "DP-3",
+                "widgets": [
+                ]
+            },
+            {
+                "name": "eDP-1",
                 "widgets": [
                 ]
             }

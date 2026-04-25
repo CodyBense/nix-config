@@ -10,6 +10,7 @@
     nwg-look
     adw-gtk3
     kdePackages.qt6ct
+    libnotify
   ];
 
   # networkmanager and bluetooth enables in their owm modules

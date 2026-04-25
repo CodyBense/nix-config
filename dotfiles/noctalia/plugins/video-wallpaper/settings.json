@@ -1,4 +1,9 @@
 {
-  "thumbCacheReady": true
+  "thumbCacheReady": true,
+  "enabled": true,
+  "wallpapersFolder": "/home/cody/nix-config/wallpapers",
+  "eDP-1": {
+    "currentWallpaper": "",
+    "isPlaying": true
+  }
 }
-
