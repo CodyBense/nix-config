@@ -27,7 +27,7 @@
 
     helium = {
       url = "github:AlvaroParker/helium-nix";
-      inputs.nixokgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
