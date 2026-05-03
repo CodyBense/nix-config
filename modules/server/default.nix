@@ -13,8 +13,8 @@
     ./minecraft.nix
     ./nixarr.nix
     # ./ollama.nix
-    #./pihole.nix
-    ./rssfeed.nix
+    # ./pihole.nix
+    # ./rssfeed.nix
     ./tailscale.nix
   ];
 
