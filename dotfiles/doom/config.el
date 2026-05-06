@@ -310,3 +310,6 @@
     (when-let ((body (cadr (assoc "body" headers))))
       (message-goto-body)
       (insert (url-unhex-string body)))))
+
+;; PDF
+(setq pdf-view-use-external-viewer t)
