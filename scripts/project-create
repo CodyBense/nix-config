@@ -76,8 +76,6 @@ projectCreate() {
         mkpdir "$parentDir" "$projectName"
         cd "$parentDir"/"$projectName" || exit
         git init
-        cat ~/nix-config/dotfiles/git/C.gitignore >"$parentDir"/"$projectName"/.gitignore
-        touch "$parentDir"/"$projectName"/main.c
         ;;
     esac
 }
@@ -106,7 +104,7 @@ main() {
     esac
 
     local languageChoice
-    languageChoice=$(gum choose go rust zig c python bash)
+    languageChoice=$(gum choose go rust zig c python bash other)
 
     projectCreate "$languageChoice" "$paretDir" "$projectName"
 
