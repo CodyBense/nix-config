@@ -101,5 +101,29 @@
           ];
         };
       };
+      nixosConfigurations = {
+        "maul" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+          };
+          modules = [
+            ./hosts/maul/configuration.nix
+            nixarr.nixosModules.defalt
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit username;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.userUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.${username} = ./modules/home-manager;
+            }
+          ];
+        };
+      };
     };
 }
