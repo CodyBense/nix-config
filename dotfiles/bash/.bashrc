@@ -33,6 +33,7 @@ alias lg="lazygit"
 alias zj="zellij"
 alias zja="zellij attach"
 alias nrsf="sudo nixos-rebuild switch --flake ."
+alias nos="nh os switch ."
 alias ssh="kitty +kitten ssh"
 
 # flatpak aliases
