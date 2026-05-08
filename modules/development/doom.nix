@@ -17,7 +17,7 @@
     curl
     wget
     nodejs
-    nodePackages.js-beautify
+    js-beautify
     shellcheck
     html-tidy
     stylelint
