@@ -35,6 +35,11 @@ alias zja="zellij attach"
 alias nrsf="sudo nixos-rebuild switch --flake ."
 alias nos="nh os switch ."
 alias ssh="kitty +kitten ssh"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gph="git push"
+alias gpl="git pull"
 
 # flatpak aliases
 # alias yazi="flatpak run io.github.sxyazi.yazi"
