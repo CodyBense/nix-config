@@ -29,6 +29,8 @@
       url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland/v0.55.0";
   };
 
   outputs =
@@ -37,6 +39,7 @@
       nixpkgs,
       home-manager,
       nixarr,
+      hyprland,
       ...
     }@inputs:
     let

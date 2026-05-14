@@ -9,6 +9,7 @@
     ./gaming.nix
     ./gnome.nix
     ./hibernation.nix
+    ./hyprland.nix
     ./kanata.nix
     ./networking.nix
     ./niri.nix
