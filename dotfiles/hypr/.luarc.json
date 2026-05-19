@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/cody/.config/hypr"
+    ]
+  },
+  "diagnostics": {
+    "globals": ["hl"]
+  }
+}
