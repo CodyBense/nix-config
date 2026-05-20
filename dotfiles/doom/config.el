@@ -312,4 +312,4 @@
       (insert (url-unhex-string body)))))
 
 ;; PDF
-(setq pdf-view-use-external-viewer t)
+(setq org-file-apps '(("\\.pdf\\'" . "zathura %s")))
