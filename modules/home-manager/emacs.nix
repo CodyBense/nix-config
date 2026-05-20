@@ -3,7 +3,7 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs; # This is the ONLY emacs installation
+    package = pkgs.emacs-pgtk; # This is the ONLY emacs installation
     extraPackages =
       epkgs: with epkgs; [
         doom
