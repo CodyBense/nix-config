@@ -5,6 +5,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./browsers.nix
+    ./email.nix
     ./fonts.nix
     ./gaming.nix
     ./gnome.nix
