@@ -11,16 +11,23 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "workspace-one",
+    name = "kitty",
     match = {
         class = "^kitty$" ,
-        class = "^emacs$",
     },
     workspace =  "1",
 })
 
 hl.window_rule({
-    name = "workspace-two",
+    name = "emacs",
+    match = {
+        class = "^emacs$" ,
+    },
+    workspace =  "1",
+})
+
+hl.window_rule({
+    name = "browser",
     match = {
         class = "^helium$",
     },
@@ -28,10 +35,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "workspace-three",
+    name = "dolphin",
     match = {
-        class = "^dolphin$",
-        class = "^files$",
+        class = "org.kde.dolphin",
         },
     workspace = "3",
 })
@@ -40,7 +46,23 @@ hl.window_rule({
     name = "floating",
     match = {
         class = "project-launch",
+    },
+    float = true,
+    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+})
+
+hl.window_rule({
+    name = "floating",
+    match = {
         class = "project-create",
+    },
+    float = true,
+    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+})
+
+hl.window_rule({
+    name = "floating",
+    match = {
         class = "ssh-connections",
     },
     float = true,
