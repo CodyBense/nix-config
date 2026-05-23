@@ -19,8 +19,6 @@ require("monitors")
 hl.on("hyprland.start", function ()
     hl.exec_cmd("udiskie")
     hl.exec_cmd("emacs")
-    hl.exec_cmd("sleep 1")
-    hl.exec_cmd(terminal)
     hl.exec_cmd("noctalia-shell")
   -- hl.exec_cmd(terminal)
   -- hl.exec_cmd("nm-applet")
@@ -200,7 +198,7 @@ hl.config({
         kb_rules   = "",
 
         repeat_rate = 35,
-        repeat_delay = 200,
+        repeat_delay = 250,
         follow_mouse = 1,
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
         touchpad = {
