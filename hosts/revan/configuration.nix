@@ -119,6 +119,7 @@
     rofi
     rsync
     spotify
+    sioyek
     swaynotificationcenter
     starship
     television
