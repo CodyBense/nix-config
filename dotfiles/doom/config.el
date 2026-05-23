@@ -312,4 +312,21 @@
       (insert (url-unhex-string body)))))
 
 ;; PDF
-(setq org-file-apps '(("\\.pdf\\'" . "zathura %s")))
+(setq org-file-apps '(("\\.pdf\\'" . "sioyek %s")))
+
+;; uv
+(defun uv-activate ()
+  "Activate Python environment managed by uv based on current project directory."
+  (interactive)
+  (let* ((project-root (project-root (project-current t)))
+         (venv-path (expand-file-name ".venv" project-root))
+         (python-path (expand-file-name
+                       (if (eq system-type 'windows-nt)
+                           "Scripts/python.exe"
+                         "bin/python")
+                       venv-path)))
+    (if (file-exists-p python-path)
+        (progn
+          (setq python-shell-interpreter python-path)
+          (message "Activated UV Python environment at %s" venv-path))
+      (error "No UV Python environment found in %s" project-root))))
