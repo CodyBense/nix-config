@@ -116,7 +116,7 @@
     libreoffice
     localsend
     neovim
-    protonvpn-gui
+    proton-vpn
     rofi
     rsync
     spotify
