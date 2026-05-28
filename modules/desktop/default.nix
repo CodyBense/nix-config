@@ -8,12 +8,12 @@
     ./email.nix
     ./fonts.nix
     ./gaming.nix
-    ./gnome.nix
+    # ./gnome.nix
     ./hibernation.nix
     ./hyprland.nix
     ./kanata.nix
     ./networking.nix
-    ./niri.nix
+    # ./niri.nix
     ./storage.nix
     ./virtualisation.nix
   ];

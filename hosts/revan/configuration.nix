@@ -111,6 +111,7 @@
     imv
     jq
     jqp
+    kitty
     lazygit
     libreoffice
     localsend
