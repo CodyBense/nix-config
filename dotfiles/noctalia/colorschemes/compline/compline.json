@@ -1,0 +1,18 @@
+{
+        "mError": "#cdacac", //red
+        "mHover": "#b4c4bc", //
+        "mOnError": "#0f1114", //
+        "mOnHover": "#0f1114", //
+        "mOnPrimary": "#0f1114", //base0
+        "mOnSecondary": "#0f1114", //
+        "mOnSurface": "#ccc4b4", //fg-alt
+        "mOnSurfaceVariant": "#98a4ac", //dark-cyan
+        "mOnTertiary": "#0f1114", //
+        "mOutline": "#515761", //base5
+        "mPrimary": "#b8c4b8", //green
+        "mSecondary": "#0f1114", //
+        "mShadow": "#0f1114", //
+        "mSurface": "#171a1e", //base1
+        "mSurfaceVariant": "#3d424a", //base4
+        "mTertiary": "#b4c4bc", //teal
+}
