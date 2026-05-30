@@ -7,6 +7,7 @@
 
 {
   hardware.enableRedistributableFirmware = true;
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -23,5 +24,6 @@
     playerctl
     wireplumber
     alsa-utils
+    sof-firmware
   ];
 }
