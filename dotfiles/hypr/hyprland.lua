@@ -261,3 +261,6 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
+
+-- This loads Noctalia-generated Hyprland colors.
+dofile("/home/cody/.config/hypr/noctalia/noctalia-colors.lua")

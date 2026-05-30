@@ -26,7 +26,78 @@ hl.bind(mainMod .. " + ALT + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu toggle"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("noctalia-shell ipc call launcher clipboard"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + W", function ()
+--     for i, workspace in pairs(hl.get_workspaces()) do
+--         hl.notification.create({ text=string.format("worksapce %s is on monitor: %s", workspace.id, workspace.monitor), duration=10000, icon=1, color=0, font_size=12 })
+--         hl.dispatch(hl.dsp.workspace.move({ workspace = workspace, monitor = "eDP-1" }))
+--     end
+
+-- end)
+hl.bind(mainMod .. " + M", function ()
+    local LAPTOP = "eDP-1"
+    local EXTERNAL = "DP-3"
+
+    local LAPTOP_SPEC = {
+        output   = "eDP-1",
+        mode     = "1920x1200@59.950",
+        position = "0x0",
+        scale    = "1",
+        disabled = false,
+    }
+
+    local EXTERNAL_SPEC = {
+        output = "DP-3",
+        mode = "2560x1440@60",
+        position = "1920x0",
+        scale = "1",
+        disabled = false,
+    }
+
+    local focused = hl.get_active_workspace()
+    hl.notification.create({ text=string.format("focused window: %s", focused.id), duration=10000, icon=1, color=0, font_size=12 })
+    local laptopOn = hl.get_monitor(LAPTOP) ~= nil
+    local externalOn = hl.get_monitor(EXTERNAL) ~= nil
+
+    local target, targetSpec, disable
+
+    if laptopOn and externalOn then
+        target = EXTERNAL
+        targetSpec = EXTERNAL_SPEC
+        disable = LAPTOP
+    elseif externalOn then
+        target = LAPTOP
+        targetSpec = LAPTOP_SPEC
+        disable = EXTERNAL
+    elseif laptopOn then
+        target = EXTERNAL
+        targetSpec = EXTERNAL_SPEC
+        disable = LAPTOP
+    else
+        target = LAPTOP
+        targetSpec = LAPTOP_SPEC
+        disable = EXTERNAL
+    end
+
+    -- local workspaces = hl.get_workspaces()
+    -- for _, ws in pairs(workspaces) do
+    --     if ws.monitor == disable then
+    --         hl.dispatch(hl.dsp.workspace.move_to_monitor({
+    --             workspace = ws.id,
+    --             monitor = target,
+    --         }))
+    --     end
+    -- end
+
+    hl.monitor({ output = disable, disabled = true })
+    os.execute("sleep 0.5")
+
+    hl.monitor(targetSpec)
+    os.execute("sleep 0.5")
+
+    -- hl.dispatch(hl.dsp.focus({ monitor = target }))
+    hl.dispatch(hl.dsp.focus({ workspace = focused.id }))
+end)
 hl.bind(mainMod .. " + R", hl.dsp.layout("colresize +conf"))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))

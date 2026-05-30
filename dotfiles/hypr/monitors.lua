@@ -12,7 +12,8 @@ hl.monitor({
 
 hl.monitor({
     output = "DP-3",
-    mode = "2560x1440@240",
-    position = "auto",
+    mode = "2560x1440@60",
+    position = "1920x0",
     scale = "1",
+    -- mirror = "eDP-1",
 })
