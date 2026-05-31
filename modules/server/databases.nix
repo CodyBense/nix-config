@@ -10,7 +10,7 @@
     enable = true;
     ensureDatabases = [ "test" ];
     enableTCPIP = true;
-    port = 5432;
+    settings.port = 5432;
     authentication = pkgs.lib.mkOverride 10 ''
       #type database DBuser auth-method
       local all      all    trust
