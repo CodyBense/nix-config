@@ -30,5 +30,5 @@
     '';
   };
 
-  networking.firewall.allowedTCPPorts = [ 5432 ];
+  config.networking.firewall.allowedTCPPorts = [ 5432 ];
 }
