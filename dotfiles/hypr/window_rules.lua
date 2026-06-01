@@ -43,7 +43,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "floating",
+    name = "yazi",
+    match = {
+        class = "files",
+    },
+    workspace = "3",
+})
+
+hl.window_rule({
+    name = "project-launch",
     match = {
         class = "project-launch",
     },
@@ -52,7 +60,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "floating",
+    name = "project-create",
     match = {
         class = "project-create",
     },
@@ -61,9 +69,18 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "floating",
+    name = "ssh-connections",
     match = {
         class = "ssh-connections",
+    },
+    float = true,
+    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+})
+
+hl.window_rule({
+    name = "notes-manager",
+    match = {
+        class = "notes-manager",
     },
     float = true,
     size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
