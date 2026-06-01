@@ -160,25 +160,9 @@
             ],
             "right": [
                 {
-                    "iconColor": "none",
-                    "id": "PowerProfile"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Bluetooth",
-                    "textColor": "none"
-                },
-                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "VPN",
-                    "textColor": "none"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Network",
                     "textColor": "none"
                 },
                 {
@@ -203,13 +187,6 @@
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
-                },
-                {
-                    "applyToAllMonitors": false,
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Brightness",
                     "textColor": "none"
                 },
                 {
@@ -275,7 +252,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Catppuccin",
+        "predefinedScheme": "compline",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -508,7 +485,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
