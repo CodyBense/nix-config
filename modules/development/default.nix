@@ -11,4 +11,8 @@
     ./web.nix
     ./zig.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    tmux
+  ];
 }
