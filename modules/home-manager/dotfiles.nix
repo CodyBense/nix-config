@@ -16,6 +16,6 @@ in
     ".config/rofi".source = mkOutOfStoreSymlink "${configDir}/rofi";
     ".config/zellij".source = mkOutOfStoreSymlink "${configDir}/zellij";
     ".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
-    ".config/tmux".source = mkOutOfStoreSymlink "${configDir}/tmux";
+    ".config/tmux".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/.tmux.conf";
   };
 }
