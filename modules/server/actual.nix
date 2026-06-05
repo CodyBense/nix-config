@@ -6,7 +6,6 @@
 }:
 
 {
-  environment.systemPackages = with pkgs; [
-    actual-server
-  ];
+  services.actual.enable = true;
+  # default port is 3000
 }
