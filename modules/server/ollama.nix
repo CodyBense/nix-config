@@ -14,4 +14,8 @@
       "deepseek-r1:1.5b"
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    open-webui
+  ];
 }
