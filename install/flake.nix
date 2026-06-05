@@ -11,7 +11,7 @@
 
         echo '{{ Color "99" " Building nix-config " }}' | ${pkgs.gum}/bin/gum format -t template
         sleep 1
-        hostName=$(${pkgs.gum}/bin/gum choose "revan" "pikachu")
+        hostName=$(${pkgs.gum}/bin/gum choose $(ls ~/nix-config/hosts))
 
         # ensuring hardware-configuration.nix is correct
         sudo cat /etc/nixos/hardware-configuration.nix > hosts/$hostName/hardware-configuration.nix
