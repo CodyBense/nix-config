@@ -2,19 +2,41 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/server
+    ../../modules/shares
+    ../../modules/development/doom.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "maul"; # Define your hostname.
+  networking = {
+    interfaces.enp40s0 = {
+      wakeOnLan.enable = true;
+      useDHCP = false;
+      ipv4.addresses = [
+        {
+          address = "192.168.1.232";
+          prefixLength = 24;
+        }
+      ];
+    };
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "1.1.1.1" ];
+  };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -52,8 +74,11 @@
   users.users.cody = {
     isNormalUser = true;
     description = "cody";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -68,14 +93,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  neovim
-  git
-  direnv
-  fzf
-  starship
-  zoxide
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    neovim
+    git
+    direnv
+    fzf
+    starship
+    zoxide
   ];
 
   # nh
