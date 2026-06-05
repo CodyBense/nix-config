@@ -15,7 +15,9 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    open-webui
-  ];
+  services.open-webui = {
+    enable = true;
+    package = pkgs.unstable.open-webui;
+    port = 8083;
+  };
 }
