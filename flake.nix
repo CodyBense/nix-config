@@ -113,7 +113,7 @@
           };
           modules = [
             ./hosts/maul/configuration.nix
-            nixarr.nixosModules.defalt
+            nixarr.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
@@ -121,7 +121,7 @@
                 inherit username;
               };
               home-manager.useGlobalPkgs = true;
-              home-manager.userUserPackages = true;
+              home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.${username} = ./modules/home-manager;
             }
