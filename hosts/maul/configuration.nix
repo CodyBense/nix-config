@@ -16,6 +16,7 @@
     ../../modules/server
     ../../modules/shares
     ../../modules/development/doom.nix
+    ../../modules/drivers
   ];
 
   # Bootloader.
@@ -38,13 +39,10 @@
     nameservers = [ "1.1.1.1" ];
   };
 
-  # Nvidia
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
-
   # Enable networking
   networking.networkmanager.enable = true;
+
+  systemd.service.wg.enable = false;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
