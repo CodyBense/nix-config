@@ -42,7 +42,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  systemd.service.wg.enable = false;
+  systemd.services.wg.enable = false;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
