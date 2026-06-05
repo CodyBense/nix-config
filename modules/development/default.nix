@@ -8,13 +8,8 @@
     ./go.nix
     ./python.nix
     ./rust.nix
+    ./tmux.nix
     ./web.nix
     ./zig.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
-    tmux
-    sesh
-    zellij
   ];
 }
