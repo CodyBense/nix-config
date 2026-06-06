@@ -13,8 +13,19 @@
       "llama3.2:3B"
       "deepseek-r1:1.5b"
     ];
+    host = "0.0.0.0";
+    port = 11434;
   };
 
-  services.open-webui.enable = true;
-  # default port 8080
+  services.open-webui = {
+    enable = true;
+    port = 8080;
+    host = "0.0.0.0";
+    environment = {
+      OLLAMA_BASE_URL = "http://127.0.0.1:11434";
+};
+    openFirewall = true;
+  };
+
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 }
