@@ -6,6 +6,12 @@
 }:
 
 {
-  services.actual.enable = true;
-  # default port is 3000
+  services.actual = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      port = 3000;
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 3000 ];
 }
