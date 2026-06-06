@@ -15,6 +15,7 @@
     ./nixarr.nix
     ./ollama.nix
     # ./pihole.nix
+    ./samba.nix
     ./tailscale.nix
   ];
 
