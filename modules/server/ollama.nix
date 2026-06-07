@@ -12,6 +12,8 @@
     loadModels = [
       "llama3.2:3B"
       "deepseek-r1:1.5b"
+      "deepseek-r1:7b"
+      "qwen3.5:9b"
     ];
     host = "0.0.0.0";
     port = 11434;
