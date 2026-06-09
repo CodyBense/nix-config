@@ -57,6 +57,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  services.fwupd.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cody = {
     isNormalUser = true;
@@ -65,6 +67,7 @@
       "networkmanager"
       "wheel"
       "input"
+      "audio"
     ];
     packages = with pkgs; [
       #  thunderbird
@@ -100,6 +103,7 @@
     gh
     gimp
     git
+    gnupg
     grimblast
     gum
     inputs.helium.packages.${system}.default
@@ -112,6 +116,7 @@
     libreoffice
     localsend
     neovim
+    pinentry-curses
     proton-vpn
     rofi
     rsync
