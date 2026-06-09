@@ -140,9 +140,9 @@ hl.bind(mainMod .. " + ALT + N", function()
     hl.dispatch(hl.dsp.exec_cmd("emacsclient -n -e '(progn (select-frame-set-input-focus (selected-frame)) (find-file \"~/org/notes.org\"))'"))
     hl.dispatch(hl.dsp.focus({ window="class:^emacs" }))
 end)
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/niri/scripts/project-launch.sh"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/hypr/scripts/project-launch.sh"))
 hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("kitty --app-id project-create project-create"))
-hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd("~/nix-config/dotfiles/niri/scripts/ssh-connections.sh"))
+hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/ssh-connections.sh"))
 
 -- Movement Binds
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))
