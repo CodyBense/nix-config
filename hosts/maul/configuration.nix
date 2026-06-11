@@ -6,6 +6,7 @@
   config,
   pkgs,
   username,
+  inputs,
   ...
 }:
 
@@ -91,12 +92,15 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
+    btop
+    inputs.compose2nix.packages.x86_64-linux.default
     neovim
     git
     direnv
     fzf
     starship
     zoxide
+    zellij
   ];
 
   # nh

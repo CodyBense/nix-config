@@ -31,6 +31,11 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland/v0.55.2";
+
+    compose2nix = {
+      url = "github:aksiksi/compose2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
