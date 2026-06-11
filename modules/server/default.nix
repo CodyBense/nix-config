@@ -14,7 +14,7 @@
     ./minecraft.nix
     ./nixarr.nix
     ./ollama.nix
-    # ./pihole.nix
+    ./pihole/docker-compose.nix
     ./samba.nix
     ./tailscale.nix
   ];
