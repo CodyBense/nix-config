@@ -9,7 +9,7 @@
   imports = [
     ./actual.nix
     ./databases.nix
-    ./docker.nix
+    # ./docker.nix
     ./immich.nix
     ./minecraft.nix
     ./nixarr.nix

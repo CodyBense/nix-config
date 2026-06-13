@@ -16,8 +16,8 @@
     settings = {
       dhcp = false;
       ipv6 = false;
-      dns.upstream = [ "1.1.1.1" ];
-      hosts = [ "192.168.1.153" ];
+      dns.upstream = [ "9.9.9.9" "1.1.1.1" "8.8.8.8" ];
+      hosts = [ "192.168.1.232" ];
     };
 
     lists = [
