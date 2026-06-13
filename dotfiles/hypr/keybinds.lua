@@ -23,9 +23,9 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("~/nix-config/dotfiles/niri/s
 hl.bind(mainMod .. " + ALT + E", hl.dsp.exec_cmd(fileManager))
 -- closeWindowBind:set_enabled(false)
 -- Utility Binds
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
-hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu toggle"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("noctalia-shell ipc call launcher clipboard"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty --app-id notes-manager ~/.config/hypr/scripts/notes-manage.sh"))
 hl.bind(mainMod .. " + M", function ()
     local LAPTOP = "eDP-1"

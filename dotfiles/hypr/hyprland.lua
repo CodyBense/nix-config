@@ -20,7 +20,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 1 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("emacs")
-    hl.exec_cmd("noctalia-shell")
+    hl.exec_cmd("noctalia")
   -- hl.exec_cmd(terminal)
   -- hl.exec_cmd("nm-applet")
   -- hl.exec_cmd("waybar & hyprpaper & firefox")
@@ -265,3 +265,6 @@ hl.window_rule({
 
 -- This loads Noctalia-generated Hyprland colors.
 dofile("/home/cody/.config/hypr/noctalia/noctalia-colors.lua")
+
+-- For Noctalia Color templates
+require("noctalia")
