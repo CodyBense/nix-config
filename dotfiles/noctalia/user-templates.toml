@@ -1,5 +1,10 @@
 [config]
 
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "compline"
+
 # User-defined templates
 # Add your custom templates below
 # Example:
