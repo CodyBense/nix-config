@@ -16,6 +16,7 @@
     ./ollama.nix
     ./pihole/docker-compose.nix
     ./samba.nix
+    ./syncthing.nix
     ./tailscale.nix
   ];
 
