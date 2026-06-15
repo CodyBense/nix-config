@@ -59,6 +59,11 @@
 
   services.fwupd.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cody = {
     isNormalUser = true;
