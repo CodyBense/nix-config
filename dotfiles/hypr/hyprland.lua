@@ -1,7 +1,3 @@
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
 require("noctalia/noctalia-colors")
 require("keybinds")
 require("window_rules")
@@ -11,27 +7,18 @@ require("monitors")
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
 hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 1 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("emacs")
     hl.exec_cmd("noctalia")
-  -- hl.exec_cmd(terminal)
-  -- hl.exec_cmd("nm-applet")
-  -- hl.exec_cmd("waybar & hyprpaper & firefox")
+    hl.exec_cmd("syncthing")
 end)
 
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
