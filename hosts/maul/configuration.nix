@@ -94,10 +94,11 @@
   environment.systemPackages = with pkgs; [
     btop
     inputs.compose2nix.packages.x86_64-linux.default
-    neovim
-    git
     direnv
     fzf
+    git
+    neovim
+    rsync
     starship
     zoxide
     zellij
