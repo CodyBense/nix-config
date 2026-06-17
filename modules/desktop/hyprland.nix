@@ -17,6 +17,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    hyprcursor
     hyprpolkitagent
     lua-language-server
   ];
