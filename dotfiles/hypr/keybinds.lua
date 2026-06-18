@@ -47,8 +47,6 @@ hl.bind(mainMod .. " + M", function ()
         disabled = false,
     }
 
-    local focused = hl.get_active_workspace()
-    hl.notification.create({ text=string.format("focused window: %s", focused.id), duration=10000, icon=1, color=0, font_size=12 })
     local laptopOn = hl.get_monitor(LAPTOP) ~= nil
     local externalOn = hl.get_monitor(EXTERNAL) ~= nil
 
@@ -72,24 +70,11 @@ hl.bind(mainMod .. " + M", function ()
         disable = EXTERNAL
     end
 
-    -- local workspaces = hl.get_workspaces()
-    -- for _, ws in pairs(workspaces) do
-    --     if ws.monitor == disable then
-    --         hl.dispatch(hl.dsp.workspace.move_to_monitor({
-    --             workspace = ws.id,
-    --             monitor = target,
-    --         }))
-    --     end
-    -- end
-
     hl.monitor({ output = disable, disabled = true })
     os.execute("sleep 0.5")
 
     hl.monitor(targetSpec)
     os.execute("sleep 0.5")
-
-    -- hl.dispatch(hl.dsp.focus({ monitor = target }))
-    hl.dispatch(hl.dsp.focus({ workspace = focused.id }))
 end)
 hl.bind(mainMod .. " + R", hl.dsp.layout("colresize +conf"))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
