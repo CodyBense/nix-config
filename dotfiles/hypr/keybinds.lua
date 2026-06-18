@@ -18,7 +18,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Programs Binds
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("emacs"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("emacsclient -c -a emacs"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("~/nix-config/dotfiles/niri/scripts/launch-file-manager.sh"))
 hl.bind(mainMod .. " + ALT + E", hl.dsp.exec_cmd(fileManager))
 -- closeWindowBind:set_enabled(false)
