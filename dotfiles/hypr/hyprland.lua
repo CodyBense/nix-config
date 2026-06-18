@@ -10,7 +10,7 @@ require("monitors")
 hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 1 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%")
     hl.exec_cmd("udiskie")
-    hl.exec_cmd("emacs")
+    hl.exec_cmd("emacs --fg-daemon")
     hl.exec_cmd("noctalia")
     hl.exec_cmd("syncthing")
 end)
@@ -22,6 +22,7 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "catppuccin")
 
 
 -----------------------
