@@ -17,6 +17,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    catppuccin-cursors.mochaSapphire
     hyprcursor
     hyprpolkitagent
     lua-language-server
