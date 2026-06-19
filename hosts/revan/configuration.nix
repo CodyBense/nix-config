@@ -62,6 +62,7 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    user = "cody";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
