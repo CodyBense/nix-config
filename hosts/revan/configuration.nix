@@ -74,6 +74,7 @@
       "wheel"
       "input"
       "audio"
+      "syncthing"
     ];
     packages = with pkgs; [
       #  thunderbird

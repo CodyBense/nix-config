@@ -13,5 +13,11 @@
     user = "cody";
   };
 
+  users.users.cody = {
+    extraGroups = [
+      "syncthing"
+    ];
+  };
+
   networking.firewall.allowedTCPPorts = [ 8384 ];
 }
