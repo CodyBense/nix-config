@@ -26,7 +26,9 @@ hl.bind(mainMod .. " + ALT + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty --app-id notes-manager ~/.config/hypr/scripts/notes-manage.sh"))
+hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher /emo"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("kitty --app-id notes-manager ~/.config/hypr/scripts/notes-manage.sh"))
 hl.bind(mainMod .. " + M", function ()
     local LAPTOP = "eDP-1"
     local EXTERNAL = "DP-3"
