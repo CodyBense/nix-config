@@ -1,0 +1,9 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/cody/.emacs.cody.d/init.el" . 4640)
+ ("/home/cody/workspaces/projects/bootdotdev/pokedex/main.go" . 43)
+ ("/home/cody/.emacs.cody.d/"
+  (dired-filename . "/home/cody/.emacs.cody.d/init.el"))
+ ("/home/cody/.emacs.cody.d/lisp/"
+  (dired-filename . "/home/cody/.emacs.cody.d/lisp/lsp.el"))
+ ("/home/cody/.emacs.cody.d/lisp/lsp.el" . 580)
+ ("/home/cody/.emacs.cody.d/lisp/javelin.el" . 57))
