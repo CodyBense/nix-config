@@ -10,6 +10,7 @@ in
     ".config/noctalia".source = mkOutOfStoreSymlink "${configDir}/noctalia";
     ".config/kitty".source = mkOutOfStoreSymlink "${configDir}/kitty";
     ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";
+    ".emacs.d".source = mkOutOfStoreSymlink "${configDir}/emacs";
     ".bashrc".source = mkOutOfStoreSymlink "${configDir}/bash/.bashrc";
     ".bash_profile".source = mkOutOfStoreSymlink "${configDir}/bash/.bash_profile";
     ".config/starship".source = mkOutOfStoreSymlink "${configDir}/startship.toml";
