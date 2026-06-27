@@ -46,6 +46,10 @@
   :ensure t
   :mode "\\.rs\\'")
 
+(use-package lua-mode
+  :ensure t
+  :mode "\\.lua\\'")
+
 ;; YASNIPPET
 ;; No :defer — yas-global-mode must be live before the first eglot buffer
 ;; opens or yasnippet-capf serves nothing on first completion attempt.
@@ -94,6 +98,7 @@
          (nix-ts-mode    . eglot-ensure)
          (templ-ts-mode  . eglot-ensure)
          (zig-mode       . eglot-ensure)
+         (lua-mode       . eglot-ensure)
 	     (rust-mode . eglot-ensure))
   :custom
   (eglot-autoshutdown       t)
