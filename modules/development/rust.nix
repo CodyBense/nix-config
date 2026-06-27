@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,7 +11,7 @@
     cargo
     rustfmt
     rust-analyzer
-		rustup
+    rustup
     clippy
   ];
 }

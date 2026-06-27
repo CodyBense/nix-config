@@ -12,6 +12,7 @@
     clang
     clang-tools
     cmake
+    devenv
     libtool
     gnumake
     sdbus-cpp
