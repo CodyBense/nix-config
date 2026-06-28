@@ -169,6 +169,7 @@
 (require 'development)
 (require 'dired-config)
 (require 'editing)
+(require 'flash-config)
 (require 'javelin)
 ;; (require 'keys)
 (require 'lsp)
