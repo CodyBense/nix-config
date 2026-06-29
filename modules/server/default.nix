@@ -10,7 +10,7 @@
     ./actual.nix
     ./databases.nix
     # ./docker.nix
-    ./home-assistant.nix
+    # ./home-assistant.nix
     ./immich.nix
     ./minecraft.nix
     ./nixarr.nix
