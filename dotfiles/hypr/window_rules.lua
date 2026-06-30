@@ -13,17 +13,17 @@ hl.window_rule({
 hl.window_rule({
     name = "kitty",
     match = {
-        class = "^kitty$" ,
+        class = "^kitty$",
     },
-    workspace =  "1",
+    workspace = "1",
 })
 
 hl.window_rule({
     name = "emacs",
     match = {
-        class = "^emacs$" ,
+        class = "^emacs$",
     },
-    workspace =  "1",
+    workspace = "1",
 })
 
 hl.window_rule({
@@ -38,7 +38,7 @@ hl.window_rule({
     name = "dolphin",
     match = {
         class = "org.kde.dolphin",
-        },
+    },
     workspace = "3",
 })
 
@@ -56,7 +56,7 @@ hl.window_rule({
         class = "project-launch",
     },
     float = true,
-    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
 
 hl.window_rule({
@@ -65,7 +65,7 @@ hl.window_rule({
         class = "project-create",
     },
     float = true,
-    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
 
 hl.window_rule({
@@ -74,7 +74,7 @@ hl.window_rule({
         class = "ssh-connections",
     },
     float = true,
-    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
 
 hl.window_rule({
@@ -83,13 +83,13 @@ hl.window_rule({
         class = "notes-manager",
     },
     float = true,
-    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
 
 hl.window_rule({
     name = "spotify",
     match = {
         class = "Spotify",
-},
+    },
     workspace = "special:magic",
 })
