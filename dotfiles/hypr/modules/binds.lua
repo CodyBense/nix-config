@@ -26,6 +26,57 @@ local function notif(text, timeout, icon)
     })
 end
 
+-- Monitor switching function
+local function switchMonitors()
+    local LAPTOP = "eDP-1"
+    local EXTERNAL = "DP-3"
+
+    local LAPTOP_SPEC = {
+        output   = "eDP-1",
+        mode     = "1920x1200@59.950",
+        position = "0x0",
+        scale    = "1",
+        disabled = false,
+    }
+
+    local EXTERNAL_SPEC = {
+        output = "DP-3",
+        mode = "2560x1440@60",
+        position = "1920x0",
+        scale = "1",
+        disabled = false,
+    }
+
+    local laptopOn = hl.get_monitor(LAPTOP) ~= nil
+    local externalOn = hl.get_monitor(EXTERNAL) ~= nil
+
+    local target, targetSpec, disable
+
+    if laptopOn and externalOn then
+        target = EXTERNAL
+        targetSpec = EXTERNAL_SPEC
+        disable = LAPTOP
+    elseif externalOn then
+        target = LAPTOP
+        targetSpec = LAPTOP_SPEC
+        disable = EXTERNAL
+    elseif laptopOn then
+        target = EXTERNAL
+        targetSpec = EXTERNAL_SPEC
+        disable = LAPTOP
+    else
+        target = LAPTOP
+        targetSpec = LAPTOP_SPEC
+        disable = EXTERNAL
+    end
+
+    hl.monitor({ output = disable, disabled = true })
+    os.execute("sleep 0.5")
+
+    hl.monitor(targetSpec)
+    os.execute("sleep 0.5")
+end
+
 -- Set modifier keys
 local mainMod = "SUPER + "
 local subMod = mainMod
@@ -47,7 +98,7 @@ local globalAppBinds = {
     { key = { "Q" },         dispatch = hl.dsp.window.close() },
     { key = { "R" },         dispatch = hl.dsp.layout("colresize +conf") },
     { key = { "V" },         dispatch = hl.dsp.window.float() },
-    { key = { "M", "" },     dispatch = function() notif("Implemnt monitor switch", 8000, "warning") end },
+    { key = { "M", "" },     dispatch = function() switchMonitors() end },
 
     ---- Apps
     -- Launcher
@@ -61,6 +112,8 @@ local globalAppBinds = {
     { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create project-create" },
     { key = { "ALT + S" },   dispatch = "~/.config/hypr/scripts/ssh-connections.sh" },
 
+    -- emacs
+    { key = { "E" },         dispatch = "emacs" },
 
     -- Terminal
     { key = { "T" },         dispatch = "kitty" },
