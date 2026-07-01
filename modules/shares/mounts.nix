@@ -6,8 +6,8 @@
 }:
 
 {
-  fileSystems."/mnt/vault" = {
-    device = "//192.168.1.243/data";
+  fileSystems."/mnt/maul" = {
+    device = "//192.16/mnt/Shares/Private";
     fsType = "cifs";
     options =
       let
