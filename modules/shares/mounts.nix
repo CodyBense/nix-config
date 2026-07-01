@@ -7,7 +7,7 @@
 
 {
   fileSystems."/mnt/maul" = {
-    device = "//192.16/mnt/Shares/Private";
+    device = "//192.168.1.232/mnt/Shares/Private";
     fsType = "cifs";
     options =
       let
