@@ -15,7 +15,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/server
-    ../../modules/shares
     ../../modules/development/doom.nix
     ../../modules/development/tmux.nix
     ../../modules/drivers
