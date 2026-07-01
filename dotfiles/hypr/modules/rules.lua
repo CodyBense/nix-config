@@ -13,7 +13,7 @@ local workspace1Windows = {
     { class = "helium",  workspace = "2" },
     { class = "dolphin", workspace = "3" },
     { class = "yazi",    workspace = "3" },
-    { class = "spotify", workspace = "special:magic" },
+    { class = "Spotify", workspace = "special:magic" },
 }
 
 for _, window in ipairs(workspace1Windows) do
