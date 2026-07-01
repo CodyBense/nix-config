@@ -24,8 +24,8 @@
   (define-key org-mode-map (kbd "C-c o")   #'org-clock-out)
 
   ;; Keybinds
-  (defun +find-org-file  (interactive)
-    (find-file "~/org"))
+  (defun +find-org-file ()  (interactive)
+         (find-file "~/org"))
 
   (global-unset-key (kbd "C-x o"))
   (global-set-key (kbd "C-x o c") 'org-capture)
@@ -169,6 +169,10 @@
 (setq org-agenda-current-time-string
       "    NOW                                         ")
 
+(setq org-agenda-files
+      ;; '("~/org/schedule.org"))
+      '("~/org"))
+
 (setq org-habit-show-habits-only-for-today t)
 (setq org-habit-graph-column 50)
 (setq org-agenda-remove-tags t)
@@ -237,13 +241,12 @@
         '(("t" "Todo" entry
            (file+headline "~/org/inbox.org" "Inbox")
            "* TODO %^{Task}\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:END:\n%?")
-
           ("e" "Event" entry
-           (file+headline "~/org/calendar.org" "Events")
-           "* %^{Event}\n%^{SCHEDULED}T\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:CONTACT: %(org-capture-ref-link \"~/org/contacts.org\")\n:END:\n%?")
+           (file+headline "~/org/schedule.org" "Event")
+           "* %?\n:PROPERTIES:\n:calendar-id:\tcodybense@gmail.com\n:END:\n:org-gcal:\n%^T--%^T\n:END:\n\n" :jump-to-captured t)
 
           ("d" "Deadline" entry
-           (file+headline "~/org/calendar.org" "Deadlines")
+           (file+headline "~/org/schedule.org" "Deadlines")
            "* TODO %^{Task}\nDEADLINE: %^{Deadline}T\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:END:\n%?")
 
           ("b" "Bookmark" entry
@@ -564,5 +567,26 @@
 ;; PDF
 (setq org-file-apps '(("\\.pdf\\'" . "sioyek %s")))
 
-(provide 'org-config)
+(use-package org-journal
+  :ensure t
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-x o j")
+  (setq org-journal-file-type 'weekly)
+  :config
+  (setq org-journal-dir "~/org/journal/"
+        org-journal-date-format "%A, %d %B %Y"))
+
+(defun org-journal-file-header-func (time)
+  "Custom function to create journal header."
+  (concat
+    (pcase org-journal-file-type
+      (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+      (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+      (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+      (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+
+(setq org-journal-file-header 'org-journal-file-header-func)
+
+        (provide 'org-config)
 ;;; org-mode-config.el ends here
