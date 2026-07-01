@@ -1,6 +1,7 @@
 local appList = {
     "udiskie",
     "noctalia",
+    "syncthing --no-browser"
 }
 
 -- local localAppList
