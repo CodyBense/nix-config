@@ -11,6 +11,7 @@ if Hostname == "revan" then
         position = "1920x0",
         mode = "2560x1440@60",
         scale = "1",
+        transform = 2,
     })
 else
     hl.monitor({
@@ -18,5 +19,6 @@ else
         position = "1920x0",
         mode = "2560x1440@60",
         scale = "1",
+        transform = 2,
     })
 end
