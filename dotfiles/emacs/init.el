@@ -163,6 +163,8 @@
 ;; Modules
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/custom/" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/private/" user-emacs-directory))
+
 
 (require 'completion)
 (require 'dashboard)
@@ -173,6 +175,7 @@
 (require 'javelin)
 ;; (require 'keys)
 (require 'lsp)
+(require 'mail)
 (require 'magit-config)
 (require 'meow-setup)
 (require 'modeline)
@@ -183,5 +186,6 @@
 (require 'universal-launcher)
 (require 'vterm-config)
 (require 'workspaces)
-
+;; private
+(require 'org-gcal)
 ;; (global-company-mode)
