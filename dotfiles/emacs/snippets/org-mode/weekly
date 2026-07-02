@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: weekly
+# key: weekly
+# --
+
+* Weekly Goals
+** TODO Clean Cat Area
++ [ ] Friday
+** TODO Laundry
+** TODO Turn off fan [0/3]
++ [ ] Friday
++ [ ] Saturday
++ [ ] Sunday
+
+* Notes
+
+** Sunday
+
+** Monday
+
+** Tuesday
+
+** Wednesday
+
+** Thursday
+
+** Friday
+
+** Saturday
