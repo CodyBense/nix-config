@@ -63,7 +63,10 @@
     enable = true;
     openDefaultPorts = true;
     guiAddress = "192.168.1.247:8384";
+    user = "cody";
+    group = "users";
   };
+
   networking.firewall.allowedTCPPorts = [ 8384 ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
