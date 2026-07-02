@@ -187,5 +187,6 @@
 (require 'vterm-config)
 (require 'workspaces)
 ;; private
+(require 'create-weekly)
 (require 'org-gcal)
 ;; (global-company-mode)
