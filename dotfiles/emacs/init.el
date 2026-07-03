@@ -173,7 +173,6 @@
 (require 'editing)
 (require 'flash-config)
 (require 'javelin)
-;; (require 'keys)
 (require 'lsp)
 (require 'mail)
 (require 'magit-config)
@@ -189,4 +188,3 @@
 ;; private
 (require 'create-weekly)
 (require 'org-gcal)
-;; (global-company-mode)
