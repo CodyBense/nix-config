@@ -103,6 +103,7 @@
   (define-key dired-mode-map (kbd "u")         #'dired-unmark)
   (define-key dired-mode-map (kbd "D")         #'dired-flag-file-deletion)
   (define-key dired-mode-map (kbd "R")         #'dired-do-rename)
+  (define-key dired-mode-map (kbd "c") #'dired-create-empty-file)
   (define-key dired-mode-map (kbd "C")         #'dired-do-copy)
   (define-key dired-mode-map (kbd "q")         #'dirvish-quit)
   (define-key dired-mode-map (kbd ".")         #'dired-omit-mode)
