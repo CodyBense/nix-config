@@ -120,7 +120,7 @@ local globalAppBinds = {
 
     -- Helium and file browser
     { key = { "F" },         dispatch = "helium" },
-    { key = { "SHIFT + E" }, dispatch = "~/nix-config/dotfiles/niri/scripts/launch-file-manager.sh" },
+    { key = { "Y" },         dispatch = "~/nix-config/dotfiles/niri/scripts/launch-file-manager.sh" },
     { key = { "ALT + E" },   dispatch = "dolphin" },
 
 

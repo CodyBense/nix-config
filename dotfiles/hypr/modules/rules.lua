@@ -12,7 +12,7 @@ local workspace1Windows = {
     { class = "emacs",   workspace = "1" },
     { class = "helium",  workspace = "2" },
     { class = "dolphin", workspace = "3" },
-    { class = "yazi",    workspace = "3" },
+    { class = "files",   workspace = "3" },
     { class = "Spotify", workspace = "special:magic" },
     { class = "vesktop", workspace = "special:discord" },
 }
