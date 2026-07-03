@@ -588,5 +588,5 @@
 
 (setq org-journal-file-header 'org-journal-file-header-func)
 
-        (provide 'org-config)
+(provide 'org-config)
 ;;; org-mode-config.el ends here
