@@ -142,12 +142,14 @@ local globalAppBinds = {
     ---- Special Workspaces
     { key = { "S" },          dispatch = hl.dsp.workspace.toggle_special("magic") },
     { key = { "SHIFT + S" },  dispatch = hl.dsp.window.move({ workspace = "special:magic", follow = false }) },
+    { key = { "D" },          dispatch = hl.dsp.workspace.toggle_special("discord") },
+    { key = { "SHIFT + D" },  dispatch = hl.dsp.window.move({ workspace = "special:discord", follow = false }) },
 
     -- Mouse
     { key = { "mouse_down" }, dispatch = hl.dsp.focus({ workspace = "e+1" }) },
     { key = { "mouse_up" },   dispatch = hl.dsp.focus({ workspace = "e-1" }) },
-    { key = { "mouse:272" },  dispatch = hl.dsp.window.drag(),                                               opts = { mouse = true } },
-    { key = { "mouse:273" },  dispatch = hl.dsp.window.resize(),                                             opts = { mouse = true } },
+    { key = { "mouse:272" },  dispatch = hl.dsp.window.drag(),                                                 opts = { mouse = true } },
+    { key = { "mouse:273" },  dispatch = hl.dsp.window.resize(),                                               opts = { mouse = true } },
 
 
     -- Laptop buttons

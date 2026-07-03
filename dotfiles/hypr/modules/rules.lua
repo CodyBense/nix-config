@@ -14,6 +14,7 @@ local workspace1Windows = {
     { class = "dolphin", workspace = "3" },
     { class = "yazi",    workspace = "3" },
     { class = "Spotify", workspace = "special:magic" },
+    { class = "vesktop", workspace = "special:discord" },
 }
 
 for _, window in ipairs(workspace1Windows) do
