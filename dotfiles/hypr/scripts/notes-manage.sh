@@ -4,7 +4,7 @@ ACTION=$(gum choose sync open new)
 
 case $ACTION in
 "sync")
-    rsync -rtu $HOME/org/ cody@maul:$HOME/ && rsync -rtu cody@maul:$HOME/org $HOME/
+    rsync -rtu $HOME/org/ cody@maul:$HOME/org && rsync -rtu cody@maul:$HOME/org $HOME/org
     noctalia-shell ipc call toast send '{"title": "Notes", "body": "Syncing org is complete"}'
     ;;
 "open")
