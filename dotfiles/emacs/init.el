@@ -182,6 +182,7 @@
 (require 'org-roam-config)
 (require 'spelling)
 (require 'tabs)
+(require 'tramp)
 (require 'universal-launcher)
 (require 'vterm-config)
 (require 'workspaces)
