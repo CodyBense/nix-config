@@ -12,6 +12,7 @@
     guiAddress = "192.168.1.232:8384";
     user = "cody";
     group = "users";
+    dataDir = "/home/cody/";
   };
 
   networking.firewall.allowedTCPPorts = [ 8384 ];
