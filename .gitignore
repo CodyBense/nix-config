@@ -20,4 +20,6 @@ recentf/
 savehist/
 elfeed.org
 private/
-oauth2-auto.plist 
+oauth2-auto.plist
+.org-generic-id-locations
+dotfiles/emacs/bookmarks
