@@ -31,6 +31,7 @@
   (global-set-key (kbd "C-x o c") 'org-capture)
   (global-set-key (kbd "C-x o a") 'org-agenda)
   (global-set-key (kbd "C-x o f") '+find-org-file)
+  (global-set-key (kbd "C-x o m") 'org-mode)
 
   ;; Calendar date navigation
   (with-eval-after-load 'org
