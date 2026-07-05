@@ -5,8 +5,8 @@ local error = "rgb(cdacac)"
 
 hl.config({
     general = {
-        gaps_in          = 0,
-        gaps_out         = 0,
+        gaps_in          = 4,
+        gaps_out         = 4,
 
         border_size      = 2,
 
