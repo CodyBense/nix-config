@@ -5,9 +5,9 @@ This is my shitty NixOS config. I will be doing at least a whole year on NixOS, 
 
 * Programs
 
-| Window Manager  | Niri           |
+| Window Manager  | Hyprland w/ scrolling layout |
 | Top bar         | Noctalia-shell |
-| Text editor     | Doom Emacs     |
+| Text editor     |  Emacs     |
 | Terminal        | Kitty          |
 
 * Install
