@@ -140,41 +140,41 @@ local globalAppBinds = {
     },
 
     ---- Special Workspaces
-    { key = { "S" },          dispatch = hl.dsp.workspace.toggle_special("magic") },
-    { key = { "SHIFT + S" },  dispatch = hl.dsp.window.move({ workspace = "special:magic", follow = false }) },
-    { key = { "D" },          dispatch = hl.dsp.workspace.toggle_special("discord") },
-    { key = { "SHIFT + D" },  dispatch = hl.dsp.window.move({ workspace = "special:discord", follow = false }) },
+    { key = { "S" },                     dispatch = hl.dsp.workspace.toggle_special("magic") },
+    { key = { "SHIFT + S" },             dispatch = hl.dsp.window.move({ workspace = "special:magic", follow = false }) },
+    { key = { "D" },                     dispatch = hl.dsp.workspace.toggle_special("discord") },
+    { key = { "SHIFT + D" },             dispatch = hl.dsp.window.move({ workspace = "special:discord", follow = false }) },
 
     -- Mouse
-    { key = { "mouse_down" }, dispatch = hl.dsp.focus({ workspace = "e+1" }) },
-    { key = { "mouse_up" },   dispatch = hl.dsp.focus({ workspace = "e-1" }) },
-    { key = { "mouse:272" },  dispatch = hl.dsp.window.drag(),                                                 opts = { mouse = true } },
-    { key = { "mouse:273" },  dispatch = hl.dsp.window.resize(),                                               opts = { mouse = true } },
+    { key = { "mouse_down" },            dispatch = hl.dsp.focus({ workspace = "e+1" }) },
+    { key = { "mouse_up" },              dispatch = hl.dsp.focus({ workspace = "e-1" }) },
+    { key = { "mouse:272" },             dispatch = hl.dsp.window.drag(),                                                 opts = { mouse = true } },
+    { key = { "mouse:273" },             dispatch = hl.dsp.window.resize(),                                               opts = { mouse = true } },
 
 
     -- Laptop buttons
-    {
-        key = { "XF86AudioRaiseVolume" },
-        dispatch = "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-        opts = { locked = true, repeating = true }
-    },
-    {
-        key = { "XF86AudioLowerVolume" },
-        dispatch = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
-        opts = { locked = true, repeating = true }
-    },
-    { key = { "XF86AudioMute" },         dispatch = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", opts = { locked = true, repeating = true } },
-    {
-        key = { "XF86AudioMicMute" },
-        dispatch = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-        opts = { locked = true, repeating = true }
-    },
-    { key = { "XF86MonBrightnessUp" },   dispatch = "brightnessctl set +5%",                      opts = { locked = true, repeating = true } },
-    { key = { "XF86MonBrightnessDown" }, dispatch = "brightnessctl set 5%-",                      opts = { locked = true, repeating = true } },
-    { key = { "XF86AudioNext" },         dispatch = "playerctl next",                             opts = { locked = true } },
-    { key = { "XF86AudioPause" },        dispatch = "playerctl play-pause",                       opts = { locked = true } },
-    { key = { "XF86AudioPlay" },         dispatch = "playerctl play-pause",                       opts = { locked = true } },
-    { key = { "XF86AudioPrev" },         dispatch = "playerctl previous",                         opts = { locked = true } },
+    -- {
+    --     key = { "XF86AudioRaiseVolume" },
+    --     dispatch = "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+    --     opts = { repeating = true }
+    -- },
+    -- {
+    --     key = { "XF86AudioLowerVolume" },
+    --     dispatch = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    --     opts = { repeating = true }
+    -- },
+    -- { key = { "XF86AudioMute" },         dispatch = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", opts = { locked = true } },
+    -- {
+    --     key = { "XF86AudioMicMute" },
+    --     dispatch = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    --     opts = { repeating = true }
+    -- },
+    { key = { "XF86MonBrightnessUp" },   dispatch = "brightnessctl set +5%",                                              opts = { locked = true, repeating = true } },
+    { key = { "XF86MonBrightnessDown" }, dispatch = "brightnessctl set 5%-",                                              opts = { locked = true, repeating = true } },
+    { key = { "XF86AudioNext" },         dispatch = "playerctl next",                                                     opts = { locked = true } },
+    { key = { "XF86AudioPause" },        dispatch = "playerctl play-pause",                                               opts = { locked = true } },
+    { key = { "XF86AudioPlay" },         dispatch = "playerctl play-pause",                                               opts = { locked = true } },
+    { key = { "XF86AudioPrev" },         dispatch = "playerctl previous",                                                 opts = { locked = true } },
 
 }
 
@@ -204,3 +204,19 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+-- these seem to not work with the format above
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+    { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+    { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+    { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+    { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
