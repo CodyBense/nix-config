@@ -1,3 +1,3 @@
-* Hyprland Configuration
+#+title: Hyprland Configuration
 
 The format of my hyprland configuration is taken from [[https://www.youtube.com/@Adumh00man][Adumh00man]]. The design of the configuration is to be modular, automatically handles expansion, and leverages lua being the configuration language.
