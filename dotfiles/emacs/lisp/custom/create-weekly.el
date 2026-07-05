@@ -11,7 +11,7 @@
          ;; Get week number (1-53) - using %V instead of %U
          ;; %V gives ISO week number where weeks start on Monday
          ;; This should correctly identify March 24, 2025 as week 13
-         (week-number (string-to-number (format-time-string "%U" current-time)))
+         (week-number (string-to-number (format-time-string "%V" current-time)))
 
          ;; Get friendly date format like "March 24, 2025"
          (date-string (format-time-string "%U" current-time))
