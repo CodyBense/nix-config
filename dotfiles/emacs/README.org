@@ -1,0 +1,40 @@
+#+title: Codemacs
+
+This is my personal configuration of emacs. It is heavily inspired by [[https://github.com/joshuablais/studium-emacs][Joshua Blais]], as he was the creator that motivated me to use Emacs. This configuration, like his, takes inspiration from [[https://github.com/doomemacs/core][Doom Emacs]].
+
+The configuration is designed to be modular to enable what you need (for me it is everything).
+
+The init.el and early-init.el are much of [[https://github.com/jamescherti/minimal-emacs.d][minimal-emacs.d]] for optimized startup time (This was a decision taken from Joshua Blais's config).
+
+* Modules
+
+** Completion
+Vertico/Marginalia/Orderless/Consult as well as Embark for actions. Corfu/Cape for completion in buffer.
+** Development
+Simple development settings including hideshow/hl-todo/envrc for direnv integration
+** Dired-config
+Dired using Dirvish as a modern replacement for aesthetics.
+** Editing
+Editing configuration. Grammars are contained in grammars.el
+** Javelin
+Emacs Implementation of [[https://github.com/ThePrimeagen/harpoon][ThePrimeagen's Harpoon]]
+** LSP
+Treesit/eglot configuration for LSP support and editing.
+** Magit-config
+Minor magit tweaks. Using stock keybinds mostly.
+** Mail - I don't have this setup currently
+Email in emacs, using Mu4e.
+** Meow-setup
+Another modal editing mode for Emacs
+** Modeline
+Doom modeline as a nice status bar.
+** Org-config
+Extensive org-mode configuration with keys, templates for capture, etc.
+** Spelling
+ispell/flyspell integrations.
+** Tabs
+ispell/flyspell integrations.
+** Vterm
+Vterm configuration as a popup buffer and defaults.
+** Workspaces
+Workspaces with bufferlo as a replacement for persp.
