@@ -99,6 +99,7 @@
          (templ-ts-mode  . eglot-ensure)
          (zig-mode       . eglot-ensure)
          (lua-mode       . eglot-ensure)
+         (bash-ts-mode . eglot-ensure)
 	     (rust-mode . eglot-ensure))
   :custom
   (eglot-autoshutdown       t)
