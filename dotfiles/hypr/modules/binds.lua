@@ -107,10 +107,10 @@ local globalAppBinds = {
     { key = { "C" },         dispatch = "noctalia msg panel-toggle clipboard" },
     { key = { "PERIOD" },    dispatch = "noctalia msg panel-toggle launcher /emo" },
     { key = { "N" },         dispatch = "noctalia msg panel-toggle control-center notifications" },
-    { key = { "SHIFT + N" }, dispatch = "kitty --app-id notes-manager ~/.config/hypr/scripts/notes-manager.sh" },
-    { key = { "SHIFT + P" }, dispatch = "~/.config/hypr/scripts/project-launch.sh" },
-    { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create project-create" },
-    { key = { "ALT + S" },   dispatch = "~/.config/hypr/scripts/ssh-connections.sh" },
+    { key = { "SHIFT + N" }, dispatch = "kitty --app-id notes-manager ~/bin/hypr/notes-manage.sh" },
+    { key = { "SHIFT + P" }, dispatch = "~/bin/hypr/project-launch.sh" },
+    { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create ~/bin/hypr/project-create.sh" },
+    { key = { "ALT + S" },   dispatch = "~/bin/hypr/ssh-connections.sh" },
 
     -- emacs
     { key = { "E" },         dispatch = "emacs" },
@@ -120,7 +120,7 @@ local globalAppBinds = {
 
     -- Helium and file browser
     { key = { "F" },         dispatch = "helium" },
-    { key = { "Y" },         dispatch = "~/nix-config/dotfiles/niri/scripts/launch-file-manager.sh" },
+    { key = { "Y" },         dispatch = "~/bin/hypr/launch-file-manager.sh" },
     { key = { "ALT + E" },   dispatch = "dolphin" },
 
 
