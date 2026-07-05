@@ -14,7 +14,7 @@
          (week-number (string-to-number (format-time-string "%V" current-time)))
 
          ;; Get friendly date format like "March 24, 2025"
-         (date-string (format-time-string "%U" current-time))
+         (date-string (format-time-string "%V" current-time))
 
          ;; Create folder paths
          (year-dir (expand-file-name year "~/org/journal/"))
