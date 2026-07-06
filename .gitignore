@@ -23,3 +23,5 @@ private/
 oauth2-auto.plist
 .org-generic-id-locations
 dotfiles/emacs/bookmarks
+modules/server/pihole/etc-pihole/
+modules/server/home-assistant/etc-home-assistant
