@@ -9,8 +9,6 @@
   imports = [
     ./actual.nix
     ./databases.nix
-    # ./docker.nix
-    # ./home-assistant.nix
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
