@@ -149,5 +149,9 @@
       ("async-shell-command" (async-shell-command cmd))
       ("eshell-command" (eshell-command cmd)))))
 
+(global-set-key (kbd "C-x o t") 'jb/vterm)
+(global-set-key (kbd "C-x o T") 'vterm)
+
+
 (provide 'vterm-config)
 ;;; vterm-config.el ends here
