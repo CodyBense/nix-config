@@ -145,6 +145,7 @@
     unzip
     vlc
     viber
+    vivaldi
     waybar
     wf-recorder
     wget
