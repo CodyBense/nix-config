@@ -109,6 +109,7 @@
     fzf
     git
     neovim
+    proton-vpn-cli
     rsync
     starship
     zoxide
