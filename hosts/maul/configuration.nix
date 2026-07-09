@@ -108,6 +108,7 @@
     direnv
     fzf
     git
+    libnatpmp
     neovim
     proton-vpn-cli
     rsync
