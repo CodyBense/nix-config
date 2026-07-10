@@ -151,6 +151,7 @@ local globalAppBinds = {
     { key = { "mouse:272" },             dispatch = hl.dsp.window.drag(),                                                 opts = { mouse = true } },
     { key = { "mouse:273" },             dispatch = hl.dsp.window.resize(),                                               opts = { mouse = true } },
 
+    { key = { "SHIFT + R" },             dispatch = "hyprctl reload" },
 
     -- Laptop buttons
     -- {
