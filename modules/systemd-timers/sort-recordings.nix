@@ -3,7 +3,8 @@
   systemd.timers."sort-recordings" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "Mon *-*-* 08:00:00";
+      OnCalendar = "daily";
+      Presistent = true;
       Unit = "sort-recordings.service";
     };
   };
