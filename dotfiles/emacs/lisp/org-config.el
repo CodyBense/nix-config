@@ -242,6 +242,7 @@
         '(("t" "Todo" entry
            (file+headline "~/org/inbox.org" "Inbox")
            "* TODO %^{Task}\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:END:\n%?")
+
           ("e" "Event" entry
            (file+headline "~/org/schedule.org" "Event")
            "* %?\n:PROPERTIES:\n:calendar-id:\tcodybense@gmail.com\n:END:\n:org-gcal:\n%^T--%^T\n:END:\n\n" :jump-to-captured t)
@@ -249,6 +250,11 @@
           ("d" "Deadline" entry
            (file+headline "~/org/schedule.org" "Deadlines")
            "* TODO %^{Task}\nDEADLINE: %^{Deadline}T\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:END:\n%?")
+
+          ("p" "Project" entry
+           (file+headline "~/org/projects.org" "Project")
+           ;; "** PROJ: %^ {Project}\n:PROPERTIES:\n:CREATED: %U\n:END:\n#+title: ${title}\n#+filetags: :project:private:\n\n* Overview\n\n* Goals\n\n* Status\n\n* Notes\n\n")
+           "* PROJ %^{Task}\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n** Overview\n\n** Goals\n\n** Status\n\n** Notes\n\n")
 
           ("b" "Bookmark" entry
            (file+headline "~/org/bookmarks.org" "Inbox")
