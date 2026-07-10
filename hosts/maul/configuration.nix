@@ -18,6 +18,7 @@
     ../../modules/development/doom.nix
     ../../modules/development/tmux.nix
     ../../modules/drivers
+    ../../modules/systemd-timers/sort-recordings.nix
   ];
 
   # Bootloader.
