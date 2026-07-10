@@ -10,7 +10,7 @@
 
   systemd.services."sort-recordings" = {
     script = ''
-      ${pkgs.python315} ~/nix-config/scripts/sort-recordings.py
+      ${pkgs.python315}/bin/python ~/nix-config/scripts/sort-recordings.py
     '';
     serviceConfig = {
       Type = "oneshot";
