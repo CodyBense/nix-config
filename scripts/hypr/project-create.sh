@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
+updateDevenv() {
+    cat "${HOME}/nix-config/templates/${1}.nix" >> $2/devenv.nix
+}
+
 createProject() {
     local language="$1"
     local projectName="$2"
+    local projectPath=$HOME/workspaces/github/CodyBense/$projectName
+    notify-send "Project: ${projectPath}"
 
     case "${language}" in
         go)
@@ -11,6 +17,7 @@ createProject() {
             git init
             go mod init github.com/CodyBense/$projectName
             devenv init && devenv allow
+            updateDevenv "go" $projectPath
             git add . && git commit -m "init ${projectName}"
         ;;
         rust)
@@ -19,6 +26,7 @@ createProject() {
             cd $HOME/workspaces/github/CodyBense/$projectName
             cargo init
             devenv init && devenv allow
+            updateDevenv "rust" $projectPath
             git add . && git commit -m "init ${projectName}"
         ;;
         zig)
@@ -28,6 +36,7 @@ createProject() {
             git init
             zig init
             devenv init && devenv allow
+            updateDevenv "zig" $projectPath
             git add . && git commit -m "init ${projectName}"
 
         ;;
@@ -40,6 +49,7 @@ createProject() {
             cd $HOME/workspaces/github/CodyBense/$projectName
             uv init
             devenv init && devenv allow
+            updateDevenv "python" $projectPath
             git add . && git commit -m "init ${projectName}"
         ;;
         *)
