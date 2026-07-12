@@ -42,6 +42,12 @@ createProject() {
         ;;
         c)
             echo "C"
+            mkdir -p $HOME/workspaces/github/CodyBense/$projectName
+            cd $HOME/workspaces/github/CodyBense/$projectName
+            git init
+            devenv init && devenv allow
+            updateDevenv "c" $projectPath
+            git add . && git commit -m "init ${projectName}"
         ;;
         python)
             echo "PYTHON"
