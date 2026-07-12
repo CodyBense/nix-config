@@ -113,7 +113,7 @@ local globalAppBinds = {
     { key = { "ALT + S" },   dispatch = "~/bin/hypr/ssh-connections.sh" },
 
     -- emacs
-    { key = { "E" },         dispatch = "emacs" },
+    { key = { "E" },         dispatch = "emacsclient -nc" },
 
     -- Terminal
     { key = { "T" },         dispatch = "kitty" },

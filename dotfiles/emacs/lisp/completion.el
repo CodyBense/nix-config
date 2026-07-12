@@ -56,6 +56,7 @@
 
 (use-package nerd-icons-completion
   :ensure t
+  :after (nerd-icons marginalia)
   :demand t
   :config
   (nerd-icons-completion-mode)

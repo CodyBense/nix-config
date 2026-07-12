@@ -1,7 +1,6 @@
 ;;; modeline.el -*- lexical-binding: t; -*-
 
-(use-package nerd-icons :demand t)
-(elpaca-wait)
+(require 'nerd-icons)
 
 (use-package doom-modeline
   :demand t

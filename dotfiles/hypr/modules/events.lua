@@ -1,7 +1,8 @@
 local appList = {
     "udiskie",
     "noctalia",
-    "syncthing --no-browser"
+    "syncthing --no-browser",
+    "emacs --daemon"
 }
 
 -- local localAppList

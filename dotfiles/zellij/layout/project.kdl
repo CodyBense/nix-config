@@ -18,7 +18,4 @@ layout {
        tab name="monitor" {
            pane command="btop"
        }
-       tab name="emacs" {
-           pane command="emacs"
-       }
 }
