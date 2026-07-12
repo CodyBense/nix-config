@@ -165,7 +165,6 @@
 (add-to-list 'load-path (expand-file-name "lisp/custom/" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/private/" user-emacs-directory))
 
-
 (require 'completion)
 (require 'dashboard)
 (require 'development)
@@ -182,7 +181,7 @@
 (require 'org-roam-config)
 (require 'spelling)
 (require 'tabs)
-(require 'universal-launcher)
+(require 'tools)
 (require 'vterm-config)
 (require 'workspaces)
 ;; private
