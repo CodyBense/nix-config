@@ -12,8 +12,6 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    pyright
-    uv
   ];
 
   # https://devenv.sh/languages/

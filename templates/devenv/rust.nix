@@ -12,12 +12,6 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    cargo
-    clippy
-    rust-analyzer
-    rustc
-    rustfmt
-    rustup
   ];
 
   # https://devenv.sh/languages/

@@ -12,15 +12,6 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    godef
-    go
-    gopls
-    gotools
-    gomodifytags
-    gotests
-    gore
-    golangci-lint-langserver
-    devel
   ];
 
   # https://devenv.sh/languages/
