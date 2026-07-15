@@ -14,6 +14,7 @@
       "deepseek-r1:1.5b"
       "deepseek-r1:7b"
       "qwen3.5:9b"
+      "gemma4:12b"
     ];
     host = "0.0.0.0";
     port = 11434;
