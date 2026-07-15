@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 updateDevenv() {
-    cat "${HOME}/nix-config/templates/${1}.nix" >> $2/devenv.nix
+    local source=$HOME/nix-config/templates/devenv/$1.nix
+    local target=$2/devenv.nix
+    cp $source  $target
 }
 
 createProject() {
     local language="$1"
     local projectName="$2"
     local projectPath=$HOME/workspaces/github/CodyBense/$projectName
-    notify-send "Project: ${projectPath}"
 
     case "${language}" in
         go)
