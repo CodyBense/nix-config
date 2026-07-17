@@ -7,7 +7,8 @@
     wmctrl
     fd
     imagemagick
-    texlive.combined.scheme-full
+    # texlive.combined.scheme-full
+    texliveFull
     sqlite
     aspell
     aspellDicts.en
