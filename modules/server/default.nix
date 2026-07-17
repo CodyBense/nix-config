@@ -13,7 +13,7 @@
     ./immich.nix
     ./minecraft.nix
     # ./n8n.nix
-    ./n8n/docker-compose.nix
+    # ./n8n/docker-compose.nix
     ./nixarr.nix
     ./ollama.nix
     ./pihole/docker-compose.nix
