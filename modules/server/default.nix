@@ -12,6 +12,7 @@
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
+    ./n8n.nix
     ./nixarr.nix
     ./ollama.nix
     ./pihole/docker-compose.nix
