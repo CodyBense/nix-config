@@ -92,6 +92,8 @@
   :hook ((go-ts-mode     . eglot-ensure)
          (python-ts-mode . eglot-ensure)
          (js-ts-mode     . eglot-ensure)
+         (js-mode . eglot-ensure)
+         (typescript-ts-mode . eglot-ensure)
          (css-ts-mode    . eglot-ensure)
          (html-ts-mode   . eglot-ensure)
          (c-ts-mode      . eglot-ensure)
@@ -114,6 +116,10 @@
           (lambda ()
             (when (bound-and-true-p eglot--managed-mode)
               (eglot-format-buffer))))
+
+;; (use-package envrc
+;;   :ensure t
+;;   :hook (after-init . envrc-global-mode))
 
 ;; ELDOC BOX
 (use-package eldoc-box
