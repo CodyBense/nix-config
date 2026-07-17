@@ -15,7 +15,7 @@
 
     vpn = {
       enable = true;
-      wgConf = "/data/.secret/wg.conf";
+      wgConf = "/data/.secret/vpn/nixarr-US-GA-520.conf";
     };
 
     jellyfin = {
