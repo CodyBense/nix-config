@@ -19,7 +19,7 @@
 
       SMTP_HOST = "127.0.0.1";
       SMTP_PORT = 25;
-      SMTP_SECURITY = off;
+      SMTP_SECURITY = "off";
 
       SMTP_FROM = "admin@vaultwarden.codybense.com";
       SMTP_FROM_NAME = "codybense.com Vaultwarden server";
@@ -33,4 +33,6 @@
     header_up X Real-IP {remote_host}
     }
   '';
+
+  networking.firewall.allowedTCPPorts = [ 8222 ];
 }
