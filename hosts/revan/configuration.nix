@@ -143,6 +143,7 @@
     television
     tree
     unzip
+    usbutils
     vlc
     viber
     vivaldi
