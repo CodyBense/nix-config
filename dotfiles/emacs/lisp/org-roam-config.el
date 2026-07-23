@@ -25,6 +25,7 @@
         org-roam-v2-ack t)
   :config
   (setq org-roam-db-update-on-save t)
+  (setq org-roam-db-autosync-mode t)
 
   (unless (file-exists-p org-roam-directory)
     (make-directory org-roam-directory t))
@@ -33,8 +34,11 @@
         '(("d" "default" plain "%?"
            :target (file+head "${slug}.org"
                               ":PROPERTIES:\n:ID: %(org-id-new)\n:END:\n#+title: ${title}\n#+filetags: %(my/org-roam-filetags-prompt)\n\n")
-           :unnarrowed t
-           :immediate-finish nil)))
+           :unnarrowed t)
+          ("n" "notes" plain "%?"
+           :target (file+head "notes/${slug}.org"
+                              ":PROPERTIES:\n:ID: %(org-id-new)\n:TOPIC: %^{Topic}\n:LINK:\n:END:\n#+title: ${title}\n#+filetags: %(my/org-roam-filetags-prompt)\n\n")
+           :unnarrowed t)))
 
   (setq org-roam-dailies-directory "daily/"
         org-roam-dailies-capture-templates
@@ -57,5 +61,6 @@
 (global-set-key (kbd "C-x o r f") 'org-roam-node-find)
 (global-set-key (kbd "C-x o r s") 'org-roam-db-sync)
 (global-set-key (kbd "C-x o r i") 'org-roam-node-insert)
+(global-set-key (kbd "C-x o r c") 'org-roam-capture)
 
 (provide 'org-roam-config)
