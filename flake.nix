@@ -36,6 +36,8 @@
       url = "github:aksiksi/compose2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cdl-stats.url = "github:CodyBense/cdl-stats";
   };
 
   outputs =
@@ -45,6 +47,7 @@
       home-manager,
       nixarr,
       hyprland,
+      cdl-stats,
       ...
     }@inputs:
     let
@@ -64,6 +67,9 @@
           modules = [
             ./hosts/revan/configuration.nix
             ./modules/desktop/noctalia.nix
+            {
+              environment.systemPackages = [ cdl-stats.packages.x86_64-linux.default ];
+            }
             # {
             #   nixpkgs.overlays = [
             #     (final: prev: {
