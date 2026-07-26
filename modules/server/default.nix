@@ -20,7 +20,7 @@
     ./samba.nix
     ./syncthing.nix
     ./tailscale.nix
-    ./vaultwarden.nix
+    # ./vaultwarden.nix
   ];
 
   environment.systemPackages = with pkgs; [
