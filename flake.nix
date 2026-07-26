@@ -67,9 +67,6 @@
           modules = [
             ./hosts/revan/configuration.nix
             ./modules/desktop/noctalia.nix
-            {
-              environment.systemPackages = [ cdl-stats.packages.x86_64-linux.default ];
-            }
             # {
             #   nixpkgs.overlays = [
             #     (final: prev: {

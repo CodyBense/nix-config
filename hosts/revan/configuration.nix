@@ -106,6 +106,7 @@
     arduino-cli
     bat
     btop
+    inputs.cdl-stats.packages.${system}.default
     cifs-utils
     coreutils
     kdePackages.dolphin
