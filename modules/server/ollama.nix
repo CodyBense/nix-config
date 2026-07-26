@@ -8,7 +8,8 @@
 {
   services.ollama = {
     enable = true;
-    package = pkgs.ollama-cuda;
+    # package = pkgs.ollama-cuda;
+    package = pkgs.ollama;
     loadModels = [
       "llama3.2:3B"
       "deepseek-r1:1.5b"
@@ -26,7 +27,7 @@
     host = "0.0.0.0";
     environment = {
       OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-};
+    };
     openFirewall = true;
   };
 
