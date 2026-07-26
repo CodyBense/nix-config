@@ -5,10 +5,8 @@
     package = pkgs.emacs-pgtk;
     extraPackages =
       epkgs: with epkgs; [
-        doom
         vterm
         pdf-tools
-        org-roam
         treesit-grammars.with-all-grammars
         mu4e
       ];
