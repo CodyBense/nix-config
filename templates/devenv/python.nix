@@ -15,7 +15,15 @@
   ];
 
   # https://devenv.sh/languages/
-  languages.python.enable = true;
+  languages.python = {
+    enable = true;
+    venv.enalbe = true;
+    uv = {
+      enable = true;
+      sync.enable = true;
+    };
+    lsp.package = pkgs.ty;
+  };
 
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";

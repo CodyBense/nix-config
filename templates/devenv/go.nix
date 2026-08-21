@@ -12,10 +12,20 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
+    godef
+    gotools
+    gomodifytags
+    gotests
+    gore
+    golangci-lint
+    delve
   ];
 
   # https://devenv.sh/languages/
-  languages.go.enable = true;
+  languages.go = {
+    enable = true;
+    lsp.enable = true;
+  };
 
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";

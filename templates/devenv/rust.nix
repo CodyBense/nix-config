@@ -15,7 +15,12 @@
   ];
 
   # https://devenv.sh/languages/
-  languages.rust.enable = true;
+  languages.rust = {
+    enable = true;
+    channel = "nixpkgs";
+    lsp.enalbe = true;
+    components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
+  };
 
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";

@@ -12,10 +12,16 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
+    # zig
+    # zig-zlint
+    # zigimports
   ];
 
   # https://devenv.sh/languages/
-  languages.zig.enable = true;
+  languages.zig = {
+    enable = true;
+    lsp.enable = true;
+  };
 
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
