@@ -18,11 +18,20 @@
   (defun agenix--identity-protected-p (_identity-path)
     nil))
 
-(use-package envrc
-  :demand t
-  :config
-  (envrc-global-mode))
+; (use-package envrc
+;   :demand t
+;   :config
+;   (envrc-global-mode))
 
+(use-package envrc
+  :ensure t
+  :hook (after-init . envrc-global-mode))
+
+(defun my/eglot-after-envrc ()
+  (when (bound-and-true-p envrc--status)
+    (eglot-ensure)))
+
+(add-hook 'envrc-mode-hook #'my/eglot-after-envrc)
 (use-package devdocs
   :ensure t
   :bind ("C-h D" . devdocs-lookup))
