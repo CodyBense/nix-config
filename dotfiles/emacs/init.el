@@ -187,3 +187,4 @@
 ;; private
 (require 'create-weekly)
 (require 'org-gcal)
+(put 'downcase-region 'disabled nil)
