@@ -18,5 +18,6 @@ in
     ".config/zellij".source = mkOutOfStoreSymlink "${configDir}/zellij";
     ".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
     ".config/tmux".source = mkOutOfStoreSymlink "${configDir}/tmux/";
+    ".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim/";
   };
 }
