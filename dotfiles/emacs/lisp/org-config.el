@@ -242,7 +242,9 @@
         '(("t" "Todo" entry
            (file+headline "~/org/inbox.org" "Inbox")
            "* TODO %^{Task}\n:PROPERTIES:\n:CREATED: %U\n:CAPTURED: %a\n:END:\n%?")
-
+          ("a" "Appointment" entry
+           (file+headline "~/org/schedule.org" "Appointment")
+           "* %^{Appointment}\nSCHEDULED: %^T\n:PROPERTIES:\n:END:\n\n")
           ("e" "Event" entry
            (file+headline "~/org/schedule.org" "Event")
            "* %?\n:PROPERTIES:\n:calendar-id:\tcodybense@gmail.com\n:END:\n:org-gcal:\n%^T--%^T\n:END:\n\n" :jump-to-captured t)
