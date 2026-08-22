@@ -38,6 +38,11 @@
     };
 
     cdl-stats.url = "github:CodyBense/cdl-stats";
+
+    openlogi = {
+      url = "github:AprilNEA/OpenLogi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -48,6 +53,7 @@
       nixarr,
       hyprland,
       cdl-stats,
+      openlogi,
       ...
     }@inputs:
     let
@@ -74,6 +80,8 @@
             #     })
             #   ];
             # }
+            openlogi.nixosModules.default
+            { programs.openlogi.enable = true; }
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
