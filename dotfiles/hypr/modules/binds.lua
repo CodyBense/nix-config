@@ -99,6 +99,7 @@ local globalAppBinds = {
     { key = { "R" },         dispatch = hl.dsp.layout("colresize +conf") },
     { key = { "V" },         dispatch = hl.dsp.window.float() },
     { key = { "M", "" },     dispatch = function() switchMonitors() end },
+    { key = { "SHIFT + F" }, dispatch = hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }) },
 
     ---- Apps
     -- Launcher
@@ -109,7 +110,7 @@ local globalAppBinds = {
     { key = { "N" },         dispatch = "noctalia msg panel-toggle control-center notifications" },
     { key = { "SHIFT + N" }, dispatch = "kitty --app-id notes-manager ~/bin/hypr/notes-manage.sh" },
     { key = { "SHIFT + P" }, dispatch = "~/bin/hypr/project-launch.sh" },
-    { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create ~/bin/hypr/project-create.sh" },
+    { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create -e ~/bin/result/bin/project-create" },
     { key = { "ALT + S" },   dispatch = "~/bin/hypr/ssh-connections.sh" },
 
     -- emacs
