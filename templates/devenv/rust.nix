@@ -18,8 +18,14 @@
   languages.rust = {
     enable = true;
     channel = "nixpkgs";
-    lsp.enalbe = true;
-    components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
+    lsp.enable = true;
+    components = [
+      "rustc"
+      "cargo"
+      "clippy"
+      "rustfmt"
+      "rust-analyzer"
+    ];
   };
 
   # https://devenv.sh/processes/
