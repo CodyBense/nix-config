@@ -29,10 +29,11 @@ pkgs.writeShellApplication {
 
     # $1: language, $2: parentDir, $3: projectName
     envrcCreate() {
-        cp ~/nix-config/templates/devenv/"$1".nix devenv.nix
+        cd "$2"/"$3"
+        cp ~/nix-config/templates/devenv/.envrc "$2"/"$3"/.envrc
+        cp ~/nix-config/templates/devenv/"$1".nix "$2"/"$3"/devenv.nix
         devenv shell
         devenv allow
-        cat ~/nix-config/templates/devenv/.envrc > .envrc
         direnv allow
     }
 
@@ -44,62 +45,62 @@ pkgs.writeShellApplication {
         case "$language" in
         # go rust zig c python bash
         go)
-            echo '{{ Color "99" " Creating a go project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a go project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
-            ${pkgs.go}/bin/go mod init github.com/CodyBense/"$projectName"
+            ${pkgs.go}/bin/go mod init github.com/codybense/"$projectName"
             git init
-            cat ~/nix-config/dotfiles/git/Go.gitignore >"$parentDir"/"$projectName"/.gitignore
+            cat ~/nix-config/dotfiles/git/go.gitignore >"$parentDir"/"$projectName"/.gitignore
             envrcCreate "$language" "$parentDir" "$projectName"
             return
             ;;
         rust)
-            echo '{{ Color "99" " Creating a rust project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a rust project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             ${pkgs.cargo}/bin/cargo new "$parentDir"/"$projectName"
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         zig)
-            echo '{{ Color "99" " Creating a zig project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a zig project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
             ${pkgs.zig}/bin/zig init
             git init
-            cat ~/nix-config/dotfiles/git/Zig.gitignore >"$parentDir"/"$projectName"/.gitignore
+            cat ~/nix-config/dotfiles/git/zig.gitignore >"$parentDir"/"$projectName"/.gitignore
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         python)
-            echo '{{ Color "99" " Creating a python project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a python project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             ${pkgs.uv}/bin/uv init "$parentDir"/"$projectName"
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         bash)
-            echo '{{ Color "99" " Creating a bash project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a bash project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
             git init
-            cat ~/nix-config/dotfiles/git/Shell.gitignore >"$parentDir"/"$projectName"/.gitignore
+            cat ~/nix-config/dotfiles/git/shell.gitignore >"$parentDir"/"$projectName"/.gitignore
             printf "#!/usr/bin/env bash\n\n" >"$projectName"
             chmod +x "$projectName"
             ;;
         *)
-            echo '{{ Color "99" " Creating a project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ color "99" " creating a project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ Color "99" " Creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
@@ -112,10 +113,10 @@ pkgs.writeShellApplication {
         ${pkgs.gum}/bin/gum style \
             --foreground 212 --border-foreground 212 --border double \
             --align center --width 50 --margin "1 2" --padding "2 4" \
-            'Create a new project'
+            'create a new project'
 
         local projectName
-        projectName=$(${pkgs.gum}/bin/gum input --placeholder "Project Name")
+        projectName=$(${pkgs.gum}/bin/gum input --placeholder "project name")
         [[ -z "$projectName" ]] && exit 1
 
         local parentDirChoice
@@ -124,19 +125,19 @@ pkgs.writeShellApplication {
         local parentDir
         case "$parentDirChoice" in
         github)
-            paretDir="$HOME"/workspaces/github/CodyBense
+            parentDir="$HOME"/workspaces/github/codybense
             ;;
         *)
-            paretDir="$HOME"/workspaces/projects
+            parentDir="$HOME"/workspaces/projects
             ;;
         esac
 
         local languageChoice
         languageChoice=$(${pkgs.gum}/bin/gum choose go rust zig c python bash other)
 
-        projectCreate "$languageChoice" "$paretDir" "$projectName"
+        projectCreate "$languageChoice" "$parentDir" "$projectName"
 
-        return 0
+        return 1
     }
 
     main
