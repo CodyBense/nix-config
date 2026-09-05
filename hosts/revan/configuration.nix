@@ -110,6 +110,7 @@
     cifs-utils
     coreutils
     kdePackages.dolphin
+    darktable
     direnv
     fastfetch
     firefox
