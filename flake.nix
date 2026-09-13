@@ -43,6 +43,11 @@
       url = "github:AprilNEA/OpenLogi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # oxwm = {
+    #   url = "github:tonybanters/oxwm";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -54,6 +59,7 @@
       hyprland,
       cdl-stats,
       openlogi,
+      # oxwm,
       ...
     }@inputs:
     let
@@ -82,6 +88,14 @@
             # }
             openlogi.nixosModules.default
             { programs.openlogi.enable = true; }
+            # oxwm.nixosModules.default
+            # {
+            #   services.xserver = {
+            #     enable = true;
+            #     displayManager.startx.enable = true; 
+            #     windowManager.oxwm.enable = true;
+            #   };
+            # }
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {

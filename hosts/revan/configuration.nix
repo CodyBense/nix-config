@@ -109,6 +109,7 @@
     inputs.cdl-stats.packages.${system}.default
     cifs-utils
     coreutils
+    dmenu
     kdePackages.dolphin
     darktable
     direnv
@@ -154,6 +155,7 @@
     wget
     wireguard-tools
     wl-clipboard
+    xclip
     yazi
     zathura
     zathuraPkgs.zathura_pdf_mupdf
@@ -211,6 +213,12 @@
       "root"
       "@wheel"
     ];
+  };
+
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true; 
+    windowManager.oxwm.enable = true;
   };
 
   # This value determines the NixOS release from which the default
