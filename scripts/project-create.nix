@@ -97,6 +97,15 @@ pkgs.writeShellApplication {
             printf "#!/usr/bin/env bash\n\n" >"$projectName"
             chmod +x "$projectName"
             ;;
+        c)
+            echo '{{ color "99" " creating a bash project " }}' | ${pkgs.gum}/bin/gum format -t template
+            echo
+            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            echo
+            mkpdir "$parentDir" "$projectName"
+            cd "$parentDir"/"$projectName" || exit
+            git init
+            ;;
         *)
             echo '{{ color "99" " creating a project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
