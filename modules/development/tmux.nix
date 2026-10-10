@@ -8,6 +8,9 @@
 {
   environment.systemPackages = with pkgs; [
     tmux
-    sesh
+    tmuxPlugins.tmux-sessionx
+    tmuxPlugins.tmux-fzf
   ];
+
+  environment.pathsToLink = [ "/share/tmux-plugins" ];
 }
