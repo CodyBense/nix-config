@@ -14,7 +14,7 @@
     ./minecraft.nix
     ./n8n.nix
     # ./n8n/docker-compose.nix
-    ./nixarr.nix
+    # ./nixarr.nix
     ./ollama.nix
     ./pihole/docker-compose.nix
     ./samba.nix
