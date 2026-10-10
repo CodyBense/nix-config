@@ -7,6 +7,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    bash-language-server
     gcc
     glibc
     clang
