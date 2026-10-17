@@ -34,11 +34,6 @@
 
     cdl-stats.url = "github:CodyBense/cdl-stats";
 
-    openlogi = {
-      url = "github:AprilNEA/OpenLogi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # oxwm = {
     #   url = "github:tonybanters/oxwm";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -53,7 +48,6 @@
       nixarr,
       hyprland,
       cdl-stats,
-      openlogi,
       # oxwm,
       ...
     }@inputs:
@@ -81,8 +75,6 @@
             #     })
             #   ];
             # }
-            openlogi.nixosModules.default
-            { programs.openlogi.enable = true; }
             # oxwm.nixosModules.default
             # {
             #   services.xserver = {
