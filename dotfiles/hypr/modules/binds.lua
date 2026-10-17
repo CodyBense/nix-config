@@ -117,7 +117,7 @@ local globalAppBinds = {
     { key = { "E" },         dispatch = "emacsclient -nc" },
 
     -- Terminal
-    { key = { "T" },         dispatch = "kitty" },
+    { key = { "T" },         dispatch = "kitty -o allow_remote_connections=yes -o enable_layout=all" },
 
     -- Helium and file browser
     { key = { "F" },         dispatch = "helium" },
