@@ -15,8 +15,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/server
-    # ../../modules/development/doom.nix
-    ../../modules/development/tmux.nix
+    ../../modules/development
     ../../modules/drivers
     ../../modules/systemd-timers/sort-recordings.nix
   ];
