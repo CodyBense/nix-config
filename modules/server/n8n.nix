@@ -15,7 +15,13 @@
     };
   };
 
-  systemd.services.n8n.path = [ pkgs.nodejs ];
+  systemd.services.n8n.path = [
+    pkgs.nodejs
+    pkgs.gnutar
+    pkgs.gzip
+    pkgs.git
+    pkgs.coreutils
+  ];
 
   networking.firewall.allowedTCPPorts = [ 5678 ];
 }
