@@ -15,5 +15,7 @@
     };
   };
 
+  systemd.services.n8n.path = [ pkgs.nodejs ];
+
   networking.firewall.allowedTCPPorts = [ 5678 ];
 }
