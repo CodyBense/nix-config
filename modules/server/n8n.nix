@@ -21,6 +21,7 @@
     pkgs.gzip
     pkgs.git
     pkgs.coreutils
+    pkgs.python313
   ];
 
   networking.firewall.allowedTCPPorts = [ 5678 ];
