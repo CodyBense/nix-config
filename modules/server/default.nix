@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./actual.nix
+    # ./actual.nix
     ./databases.nix
     ./goeather.nix
     ./home-assistant/docker-compose.nix
@@ -16,7 +16,7 @@
     ./n8n.nix
     # ./n8n/docker-compose.nix
     # ./nixarr.nix
-    ./ollama.nix
+    # ./ollama.nix
     ./pihole/docker-compose.nix
     ./samba.nix
     ./syncthing.nix
