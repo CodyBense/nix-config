@@ -20,7 +20,6 @@
     ./pihole/docker-compose.nix
     ./samba.nix
     ./syncthing.nix
-    ./systemd-goeather.nix
     ./tailscale.nix
     # ./vaultwarden.nix
   ];
