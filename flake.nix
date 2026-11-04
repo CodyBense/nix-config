@@ -33,7 +33,7 @@
     };
 
     cdl-stats.url = "github:CodyBense/cdl-stats";
-    goeather.url = "github:CodyBense/geoather";
+    goeather.url = "github:CodyBense/goeather";
 
     # oxwm = {
     #   url = "github:tonybanters/oxwm";
