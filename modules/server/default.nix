@@ -9,6 +9,7 @@
   imports = [
     ./actual.nix
     ./databases.nix
+    ./goeather.nix
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
@@ -27,4 +28,5 @@
   environment.systemPackages = with pkgs; [
     wakeonlan
   ];
+
 }

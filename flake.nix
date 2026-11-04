@@ -33,6 +33,7 @@
     };
 
     cdl-stats.url = "github:CodyBense/cdl-stats";
+    goeather.url = "github:CodyBense/geoather";
 
     # oxwm = {
     #   url = "github:tonybanters/oxwm";
@@ -48,6 +49,7 @@
       nixarr,
       hyprland,
       cdl-stats,
+      goeather,
       # oxwm,
       ...
     }@inputs:
@@ -79,7 +81,7 @@
             # {
             #   services.xserver = {
             #     enable = true;
-            #     displayManager.startx.enable = true; 
+            #     displayManager.startx.enable = true;
             #     windowManager.oxwm.enable = true;
             #   };
             # }
@@ -131,6 +133,7 @@
           modules = [
             ./hosts/maul/configuration.nix
             nixarr.nixosModules.default
+            goeather.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
