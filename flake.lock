@@ -161,11 +161,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1793834722,
-        "narHash": "sha256-LB+NfsuicDdW1BQ5LwRZiGmg6198eHK65+EDXKkPGPs=",
+        "lastModified": 1793845616,
+        "narHash": "sha256-ushMKrhqv+8eKXvFkzBFVOWgUdNJVgUi+UDsP1l2LwY=",
         "owner": "CodyBense",
         "repo": "goeather",
-        "rev": "08c9bd6986c43e62b458bd067a281b314e78dc04",
+        "rev": "1c3030efa0c6fbf4d870a15425ead0c82706a029",
         "type": "github"
       },
       "original": {
