@@ -8,13 +8,14 @@ hl.window_rule({
 
 -- Define windows that go to a particular workspace
 local workspace1Windows = {
-    { class = "kitty",   workspace = "1" },
-    { class = "emacs",   workspace = "1" },
-    { class = "helium",  workspace = "2" },
-    { class = "dolphin", workspace = "3" },
-    { class = "files",   workspace = "3" },
-    { class = "Spotify", workspace = "special:magic" },
-    { class = "vesktop", workspace = "special:discord" },
+    { class = "kitty",     workspace = "1" },
+    { class = "emacs",     workspace = "1" },
+    { class = "helium",    workspace = "2" },
+    { class = "librewolf", workspace = "2" },
+    { class = "dolphin",   workspace = "3" },
+    { class = "files",     workspace = "3" },
+    { class = "Spotify",   workspace = "special:magic" },
+    { class = "vesktop",   workspace = "special:discord" },
 }
 
 for _, window in ipairs(workspace1Windows) do

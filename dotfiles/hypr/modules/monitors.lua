@@ -15,7 +15,7 @@ if Hostname == "revan" then
     })
 else
     hl.monitor({
-        output = "DP-3",
+        output = "DP-2",
         position = "1920x0",
         mode = "2560x1440@60",
         scale = "1",

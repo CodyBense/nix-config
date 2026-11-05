@@ -120,7 +120,7 @@ local globalAppBinds = {
     { key = { "T" },         dispatch = "kitty -o allow_remote_connections=yes -o enable_layout=all" },
 
     -- Helium and file browser
-    { key = { "F" },         dispatch = "helium" },
+    { key = { "F" },         dispatch = "librewolf" },
     { key = { "Y" },         dispatch = "~/bin/hypr/launch-file-manager.sh" },
     { key = { "ALT + E" },   dispatch = "dolphin" },
 
