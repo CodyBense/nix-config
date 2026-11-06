@@ -8,8 +8,8 @@
 {
   services.ollama = {
     enable = true;
-    # package = pkgs.ollama-cuda;
-    package = pkgs.ollama;
+    package = pkgs.ollama-cuda;
+    # package = pkgs.ollama;
     loadModels = [
       "llama3.2:3B"
       "deepseek-r1:1.5b"
