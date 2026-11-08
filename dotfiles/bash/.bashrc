@@ -10,6 +10,7 @@ export PATH=$PATH:$HOME/.emacs.d/bin
 export MANPAGER='nvim +Man!'
 export PATH=$PATH:$HOME/.nix-profile/bin
 # . "$HOME/.cargo/env"
+export GLAMOUR_STYLE=dark
 
 # aliases
 alias c="clear"
