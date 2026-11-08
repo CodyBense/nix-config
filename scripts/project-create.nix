@@ -45,30 +45,30 @@ pkgs.writeShellApplication {
         case "$language" in
         # go rust zig c python bash
         go)
-            echo '{{ color "99" " creating a go project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a go project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
-            ${pkgs.go}/bin/go mod init github.com/codybense/"$projectName"
+            ${pkgs.go}/bin/go mod init github.com/CodyBense/"$projectName"
             git init
             cat ~/nix-config/dotfiles/git/go.gitignore >"$parentDir"/"$projectName"/.gitignore
             envrcCreate "$language" "$parentDir" "$projectName"
             return
             ;;
         rust)
-            echo '{{ color "99" " creating a rust project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a rust project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             ${pkgs.cargo}/bin/cargo new "$parentDir"/"$projectName"
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         zig)
-            echo '{{ color "99" " creating a zig project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a zig project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
@@ -78,17 +78,17 @@ pkgs.writeShellApplication {
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         python)
-            echo '{{ color "99" " creating a python project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a python project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             ${pkgs.uv}/bin/uv init "$parentDir"/"$projectName"
             envrcCreate "$language" "$parentDir" "$projectName"
             ;;
         bash)
-            echo '{{ color "99" " creating a bash project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a bash project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
@@ -98,18 +98,18 @@ pkgs.writeShellApplication {
             chmod +x "$projectName"
             ;;
         c)
-            echo '{{ color "99" " creating a bash project " }}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a bash project " }}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
             git init
             ;;
         *)
-            echo '{{ color "99" " creating a project "}}' | ${pkgs.gum}/bin/gum format -t template
+            echo '{{ Color "99" " creating a project "}}' | ${pkgs.gum}/bin/gum format -t template
             echo
-            printf '{{ color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
+            printf '{{ Color "99" " creating project @ %s/%s "}}' "$parentDir" "$projectName" | ${pkgs.gum}/bin/gum format -t template
             echo
             mkpdir "$parentDir" "$projectName"
             cd "$parentDir"/"$projectName" || exit
@@ -134,7 +134,7 @@ pkgs.writeShellApplication {
         local parentDir
         case "$parentDirChoice" in
         github)
-            parentDir="$HOME"/workspaces/github/codybense
+            parentDir="$HOME"/workspaces/github/CodyBense
             ;;
         *)
             parentDir="$HOME"/workspaces/projects
