@@ -9,6 +9,7 @@
   imports = [
     # ./actual.nix
     ./databases.nix
+    ./freshrss.nix
     ./goeather.nix
     ./home-assistant/docker-compose.nix
     ./immich.nix
