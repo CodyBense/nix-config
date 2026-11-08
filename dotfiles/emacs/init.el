@@ -165,6 +165,7 @@
 (add-to-list 'load-path (expand-file-name "lisp/custom/" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/private/" user-emacs-directory))
 
+(require 'arduino)
 (require 'completion)
 (require 'dashboard)
 (require 'development)
@@ -186,5 +187,4 @@
 (require 'workspaces)
 ;; private
 (require 'create-weekly)
-(require 'org-gcal)
 (put 'downcase-region 'disabled nil)
