@@ -5,6 +5,8 @@
     nerd-fonts.jetbrains-mono
     terminus_font
     terminus_font_ttf
+    geist-font
+    alegreya
     # nerdfonts
   ];
 }
