@@ -11,7 +11,7 @@
     baseUrl = "https://freshrss.cody.com";
     webserver = "nginx";
     defaultUser = "cody";
-    passwordFile = "~/Documents/freshrss/";
+    passwordFile = "/home/cody/Documents/freshrss";
   };
 
   services.postgresql = {
@@ -31,4 +31,6 @@
       enableACME = true;
     };
   };
+
+  security.acme.acceptTerms = true;
 }
