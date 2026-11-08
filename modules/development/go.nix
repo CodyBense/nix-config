@@ -16,5 +16,6 @@
     gore
     golangci-lint
     delve
+    bootdev-cli
   ];
 }
