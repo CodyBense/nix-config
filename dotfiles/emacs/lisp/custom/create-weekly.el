@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defun create-weekly-file ()
   "Create a daily journal file organized by year and week number."
   (interactive)
