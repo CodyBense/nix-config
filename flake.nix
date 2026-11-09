@@ -34,6 +34,7 @@
 
     cdl-stats.url = "github:CodyBense/cdl-stats";
     goeather.url = "github:CodyBense/goeather";
+    project-create.url = "github:CodyBense/project-create";
 
     # oxwm = {
     #   url = "github:tonybanters/oxwm";
@@ -50,6 +51,7 @@
       hyprland,
       cdl-stats,
       goeather,
+      project-create,
       # oxwm,
       ...
     }@inputs:

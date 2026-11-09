@@ -134,6 +134,7 @@
     localsend
     neovim
     pinentry-curses
+    inputs.project-create.packages.${system}.default
     proton-vpn
     rofi
     rsync
