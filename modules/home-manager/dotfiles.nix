@@ -19,5 +19,6 @@ in
     ".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
     ".config/tmux".source = mkOutOfStoreSymlink "${configDir}/tmux/";
     ".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim/";
+    ".config/umbriel".source = mkOutOfStoreSymlink "${configDir}/umbriel/";
   };
 }

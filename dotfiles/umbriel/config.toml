@@ -1,0 +1,46 @@
+[include]
+    files = [
+          "keybinds.toml",
+    ]
+
+[general]
+    autostart = [
+              "udiskie",
+              "noctalia",
+              "syncthing --no-browser",
+              "emacs --daemon"
+        ]
+    mod_key = "Super"
+    xwayland = true
+    xwayland_native_resolution = false
+    xwayland_xsettings = true
+    xwayland_primary_output = ""
+    nvidia_sync_workaround = true
+    show_cheatsheet = true
+    focus_on_activate = false
+    attach_modal_dialogs = true
+    honor_restored_maximize = false
+
+[output.eDP-1]
+    mode = "19200x1200@60"
+    position = [0, 0]
+    scale = 1
+    focus_at_startup = true
+
+[output.DP-3]
+    mode = "2560x1440@60"
+    position = [1920, 0]
+    scale = 1
+    transform = "180"
+
+[layout]
+mode = "scrolling"
+
+[layout.scrolling]
+default_extent_fraction = 1.0
+
+[[scratchpad]]
+name = "spotify"
+
+[[scratchpad]]
+name = "discord"

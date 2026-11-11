@@ -1,0 +1,61 @@
+[keybinds]
+    "Mod+Q" = "window-close"
+    "Mod+R" = "window-cycle-primary-extent"
+    # "Mod+M""= function() switchMonitors() end
+    "Mod+SHIFT+F" = "window-toggle-fullscreen"
+
+    "Mod+SPACE"= "spawn noctalia msg panel-toggle launcher"
+    "Mod+BACKSPACE"= "spawn noctalia msg panel-toggle session"
+    "Mod+C"= "spawn noctalia msg panel-toggle clipboard"
+    "Mod+PERIOD"= "spawn noctalia msg panel-toggle launcher /emo"
+    "Mod+N"= "spawn noctalia msg panel-toggle control-center notifications"
+    "Mod+SHIFT+N"= "spawn kitty --app-id notes-manager ~/bin/hypr/notes-manage.sh"
+    "Mod+SHIFT+P"= "spawn ~/bin/hypr/project-launch.sh"
+    "Mod+CTRL+P"= "spawn kitty --app-id project-create -e project-create"
+    "Mod+ALT+S"= "spawn ~/bin/hypr/ssh-connections.sh"
+
+    "Mod+E"= "spawn emacsclient -nc"
+
+    "Mod+T"= "spawn kitty -o allow_remote_control=yes -o enabled_layouts=all"
+
+    "Mod+F"= "spawn librewolf"
+    "Mod+Y"= "spawn ~/bin/hypr/launch-file-manager.sh"
+    "Mod+ALT+E"= "spawn dolphin"
+
+    "Mod+H"= "window-focus-left"
+    "Mod+L"= "window-focus-right"
+    "Mod+SHIFT+H"= "column-move-left"
+    "Mod+SHIFT+L"= "column-move-right"
+    # {
+    #     key = { "CTRL + S" },
+    #     dispatch = function()
+    #         hl.dispatch(hl.dsp.layout("colresize +conf"))
+    #         hl.dispatch(hl.dsp.focus({ direction = "l" }))
+    #         hl.dispatch(hl.dsp.layout("colresize +conf"))
+    #         hl.dispatch(hl.dsp.focus({ direction = "r" }))
+    #     end
+    # },
+
+    "Mod+S"= "scratchpad-toggle spotify"
+    "Mod+SHIFT+S"= "window-move-to-scratchpad spotify"
+    "Mod+D"= "scratchpad-toggle discord"
+    "Mod+SHIFT+D"= "window-move-to-scratchpad discord"
+
+    # -- Mouse
+    # { key = { "mouse_down" },            dispatch = hl.dsp.focus({ workspace = "e+1" }) },
+    # { key = { "mouse_up" },              dispatch = hl.dsp.focus({ workspace = "e-1" }) },
+    # { key = { "mouse:272" },             dispatch = hl.dsp.window.drag(),                                                 opts = { mouse = true } },
+    # { key = { "mouse:273" },             dispatch = hl.dsp.window.resize(),                                               opts = { mouse = true } },
+    #
+    # { key = { "SHIFT + R" },             dispatch = "hyprctl reload" },
+
+"XF86AudioRaiseVolume" = "spawn wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioMicMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+"XF86MonBrightnessUp" = "spawn brightnessctl set +5%"
+"XF86MonBrightnessDown" = "spawn brightnessctl set 5%-"
+"XF86AudioNext" = "spawn playerctl next"
+"XF86AudioPause" = "spawn playerctl play-pause"
+"XF86AudioPlay" = "spawn playerctl play-pause"
+"XF86AudioPrev" = "spawn playerctl previous"
