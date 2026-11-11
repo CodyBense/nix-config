@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    umbriel.url = "github:noctalia-dev/umbriel/cachix";
+
     nixarr = {
       url = "github:rasmus-kirk/nixarr";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +54,7 @@
       cdl-stats,
       goeather,
       project-create,
+      umbriel,
       # oxwm,
       ...
     }@inputs:
