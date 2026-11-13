@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: method
+# key: method
+# --
+func (${1:struct}) ${2:name}(${3:params}) ${4:returnType} {
+	$0
+}
