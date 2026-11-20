@@ -14,6 +14,7 @@
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
+    ./netbird.nix
     ./n8n.nix
     # ./n8n/docker-compose.nix
     # ./nixarr.nix
