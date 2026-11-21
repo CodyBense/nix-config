@@ -11,11 +11,12 @@
     ./databases.nix
     # ./freshrss.nix
     ./goeather.nix
+    ./grocy.nix
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
-    ./netbird.nix
     ./n8n.nix
+    ./netbird.nix
     # ./n8n/docker-compose.nix
     # ./nixarr.nix
     ./ollama.nix
