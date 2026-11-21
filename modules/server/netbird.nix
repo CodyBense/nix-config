@@ -10,9 +10,9 @@
     ui.enable = true;
     openFirewall = true;
     openInternalFirewall = true;
-
-    useRoutingFeatures = "both";
   };
+
+  services.netbird.useRoutingFeatures = "both";
 
   services.resolved.enable = true;
 
