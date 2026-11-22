@@ -17,6 +17,7 @@
     ./minecraft.nix
     ./n8n.nix
     ./netbird.nix
+    ./nextcloud.nix
     # ./n8n/docker-compose.nix
     # ./nixarr.nix
     ./ollama.nix
