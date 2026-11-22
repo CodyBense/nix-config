@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-# ghostty --class="com.files.ghostty" --title="yazi" -e yazi
-kitty --title yazi --app-id files yazi
+filePath=$1
+
+if [ -z filePath ]; then
+    kitty --title yazi --app-id files yazi
+
+else
+    kitty --title yazi --app-id files yazi $filePath
+fi
