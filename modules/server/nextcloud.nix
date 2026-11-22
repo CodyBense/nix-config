@@ -16,31 +16,25 @@
 { config, pkgs, ... }:
 
 {
-  # Admin password file, kept out of the Nix store
-  environment.etc."nextcloud-admin-pass".text = "change-me-immediately";
-  # Better: use agenix/sops-nix and point adminpassFile at the decrypted secret
+  services.tailscale.enable = true;
 
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud31; # required; pick the newest one available (see note below)
-    hostName = "nextcloud.cody.homelab";
-    https = true; # tells Nextcloud it's behind TLS
+    package = pkgs.nextcloud33;
+    hostName = "maul.tail24506c.ts.net";
+    https = true;
 
     database.createLocally = true;
-    configureRedis = true; # local Redis for file locking/caching
+    configureRedis = true;
     maxUploadSize = "16G";
 
-    config = {
-      dbtype = "pgsql";
-      adminuser = "admin";
-    };
+    config.dbtype = "pgsql";
 
     settings = {
       default_phone_region = "US";
       overwriteprotocol = "https";
     };
 
-    # Optional: declaratively install apps
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps) calendar contacts notes;
     };
@@ -50,18 +44,37 @@
     phpOptions."opcache.interned_strings_buffer" = "16";
   };
 
-  # nginx is configured automatically by the module; you just add TLS
-  services.nginx.virtualHosts."nextcloud.cody.homelab" = {
+  services.nginx.virtualHosts."maul.tail24506c.ts.net" = {
     forceSSL = true;
-    enableACME = true;
+    sslCertificate = "/var/lib/tailscale-certs/cert.crt";
+    sslCertificateKey = "/var/lib/tailscale-certs/cert.key";
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "codybense@proton.me";
+  # Fetch/renew the cert weekly (tailscale only renews when it's near expiry)
+  systemd.services.tailscale-cert = {
+    after = [ "tailscaled.service" ];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      mkdir -p /var/lib/tailscale-certs
+      ${pkgs.tailscale}/bin/tailscale cert \
+        --cert-file /var/lib/tailscale-certs/cert.crt \
+        --key-file /var/lib/tailscale-certs/cert.key \
+        maul.tail24506c.ts.net
+      chown -R nginx:nginx /var/lib/tailscale-certs
+      chmod 600 /var/lib/tailscale-certs/cert.key
+      systemctl reload nginx || true
+    '';
+  };
+  systemd.timers.tailscale-cert = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "weekly";
+      Persistent = true;
+    };
   };
 
-  networking.firewall.allowedTCPPorts = [
+  # Only reachable over Tailscale
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
     80
     443
   ];
