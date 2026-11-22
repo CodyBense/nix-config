@@ -14,6 +14,7 @@ export GLAMOUR_STYLE=dark
 
 # aliases
 alias c="clear"
+alias ls="lsd -l"
 alias v="nvim"
 alias vi="nvim"
 alias iv='nvim $(fzf --preview="bat --color=always {}")'

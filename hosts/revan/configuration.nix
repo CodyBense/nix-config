@@ -132,6 +132,7 @@
     lazygit
     libreoffice
     localsend
+    lsd
     neovim
     pinentry-curses
     inputs.project-create.packages.${system}.default

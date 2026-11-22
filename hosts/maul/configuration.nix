@@ -109,6 +109,7 @@
     fzf
     git
     libnatpmp
+    lsd
     neovim
     proton-vpn-cli
     rsync
