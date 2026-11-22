@@ -111,7 +111,7 @@ local globalAppBinds = {
     { key = { "SHIFT + N" }, dispatch = "kitty --app-id notes-manager ~/bin/hypr/notes-manage.sh" },
     { key = { "SHIFT + P" }, dispatch = "~/bin/hypr/project-launch.sh" },
     { key = { "CTRL + P" },  dispatch = "kitty --app-id project-create -e project-create" },
-    { key = { "ALT + S" },   dispatch = "~/bin/hypr/ssh-connections.sh" },
+    { key = { "ALT + S" },   dispatch = "kitty ~/.config/hypr/scripts/ssh-connections.sh" },
 
     -- emacs
     { key = { "E" },         dispatch = "emacsclient -nc" },
