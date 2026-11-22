@@ -14,15 +14,14 @@ export GLAMOUR_STYLE=dark
 
 # aliases
 alias c="clear"
-alias ls="lsd -l"
 alias v="nvim"
 alias vi="nvim"
 alias iv='nvim $(fzf --preview="bat --color=always {}")'
 alias ie='emacs $(fzf --preview="bat --color=always {}")'
 alias sv="sudo nvim"
-alias ll="ls -l"
-alias la="ls -la"
-alias ls="ls --color=auto"
+alias ll="lsd -l"
+alias la="lsd -la"
+alias ls="lsd -l"
 alias grep="grep --color=auto"
 alias mkdir="mkdir -p"
 alias ib='bat $(fzf --preview="bat --color=always {}")'
