@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   services.nextcloud = {
+    package = pkgs.nextcloud35;
     enable = true;
     hostName = "nextcloud.cody.homelab";
     config.dbtype = "sqlite";
