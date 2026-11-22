@@ -14,12 +14,12 @@
     };
   };
 
-  services.nginx.virtualHosts."cody.grocy".listen = [
-    {
-      addr = "192.168.1.232";
-      port = 9283;
-    }
-  ];
+  # services.nginx.virtualHosts."cody.grocy".listen = [
+  #   {
+  #     addr = "192.168.1.232";
+  #     port = 9283;
+  #   }
+  # ];
 
   security.acme.acceptTerms = true;
 

@@ -11,7 +11,7 @@
     ./databases.nix
     # ./freshrss.nix
     ./goeather.nix
-    ./grocy.nix
+    # ./grocy.nix
     ./home-assistant/docker-compose.nix
     ./immich.nix
     ./minecraft.nix
