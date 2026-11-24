@@ -25,3 +25,6 @@ oauth2-auto.plist
 dotfiles/emacs/bookmarks
 modules/server/pihole/etc-pihole/
 modules/server/home-assistant/etc-home-assistant
+dotfiles/emacs/history
+dotfiles/emacs/places
+dotfiles/emacs/recentf
